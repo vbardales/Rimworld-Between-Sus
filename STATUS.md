@@ -24,7 +24,7 @@ remaining:
   - "2026-11-11: feature: dedicated models for engines, reactors, consoles and tanks (placeholders: vanilla heaters, batteries, comms consoles), space outside the hull instead of ground, power network for the vanilla machines"
   - "2026-11-11: feature: dedicated crew suit texture (placeholder: vanilla T-shirt), French translation (localize stage)"
 updated: 2026-11-11
-protocols_read_sha: a8c1d708ecbc4910e883dce4a9d2db4ed4febd69
+protocols_read_sha: 6f13e78ba6dd06e6f68f488dc3a64de9798ea328
 ---
 
 # Between Sus: status
