@@ -1,0 +1,7 @@
+<Project>
+  <PropertyGroup>
+    <!-- Intermediaires hors du dossier du mod : l'uploader Workshop envoie tout le dossier. -->
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)..\.build\obj\BetweenSus\</BaseIntermediateOutputPath>
+    <BaseOutputPath>$(MSBuildThisFileDirectory)..\.build\bin\BetweenSus\</BaseOutputPath>
+  </PropertyGroup>
+</Project>

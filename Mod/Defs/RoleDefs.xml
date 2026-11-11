@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<BetweenSus.RoleDef>
+		<defName>BS_Crewmate_Innocent</defName>
+		<label>innocent crewmate</label>
+		<description>You have no special power. Do your tasks, watch the others, vote well.</description>
+		<team>Crewmate</team>
+		<tip>Find the impostors before they find you.</tip>
+	</BetweenSus.RoleDef>
+
+	<BetweenSus.RoleDef>
+		<defName>BS_Impostor_Impostor</defName>
+		<label>impostor</label>
+		<description>You are an impostor. Eliminate the crew without being caught.</description>
+		<team>Impostor</team>
+		<tip>Stay close to your fellow impostors, but do not look like it.</tip>
+	</BetweenSus.RoleDef>
+
+</Defs>

@@ -1,0 +1,9 @@
+Build/
+Source/obj/
+Source/bin/
+.vs/
+.idea/
+*.user
+*.dds
+Art/.render/
+.build/

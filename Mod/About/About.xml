@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Between Sus</name>
+	<author>Nelim</author>
+	<url>https://github.com/vbardales/Rimworld-Between-Sus</url>
+	<packageId>nelim.betweensus</packageId>
+	<supportedVersions>
+		<li>1.6</li>
+	</supportedVersions>
+	<description>Impostors and crewmates in RimWorld. Start on a spaceship map, get a secret team and a secret role, and find out who is sus.
+
+Work in progress. First milestone: two teams (Crewmate, Impostor) and two roles (Innocent Crewmate, Impostor).</description>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>brrainz.harmony</li>
+	</loadAfter>
+</ModMetaData>
