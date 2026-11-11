@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<!-- Abstract base for the ship's special props. Placeholder art: the vanilla standing lamp texture, tinted. -->
+	<!-- Abstract base for the ship's special props. -->
 	<ThingDef ParentName="BuildingBase" Name="BS_PropBase" Abstract="True">
 		<graphicData>
 			<texPath>Things/Building/Furniture/LampStanding</texPath>
@@ -16,7 +16,7 @@
 		</statBases>
 	</ThingDef>
 
-	<!-- Glows without power, so the ship is lit from the start. -->
+	<!-- Glows without power, so the ship is lit from the start. Placeholder art: the vanilla standing lamp. -->
 	<ThingDef ParentName="BS_PropBase">
 		<defName>BS_CeilingLight</defName>
 		<label>ship light</label>
@@ -37,9 +37,8 @@
 		<description>The big red button of the cafeteria. Select it to call the whole crew to a meeting.</description>
 		<thingClass>BetweenSus.Building_EmergencyButton</thingClass>
 		<graphicData>
-			<texPath>Things/Building/Furniture/LampStanding</texPath>
+			<texPath>BetweenSus/Props/EmergencyButton</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<color>(0.9,0.1,0.1)</color>
 		</graphicData>
 		<passability>PassThroughOnly</passability>
 		<fillPercent>0.2</fillPercent>
@@ -51,9 +50,8 @@
 		<description>A ship station. A crewmate who works here completes a task. Select a colonist and prioritise the work "Tasks".</description>
 		<thingClass>BetweenSus.Building_Station</thingClass>
 		<graphicData>
-			<texPath>Things/Building/Furniture/LampStanding</texPath>
+			<texPath>BetweenSus/Props/Station_Task</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<color>(0.2,0.9,0.3)</color>
 		</graphicData>
 		<passability>PassThroughOnly</passability>
 		<fillPercent>0.3</fillPercent>
@@ -65,9 +63,8 @@
 		<description>Repair this station during a reactor sabotage. Both reactor stations must be repaired.</description>
 		<thingClass>BetweenSus.Building_Station</thingClass>
 		<graphicData>
-			<texPath>Things/Building/Furniture/LampStanding</texPath>
+			<texPath>BetweenSus/Props/Station_FixReactor</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<color>(0.95,0.7,0.1)</color>
 		</graphicData>
 		<passability>PassThroughOnly</passability>
 		<fillPercent>0.3</fillPercent>
@@ -79,9 +76,8 @@
 		<description>Repair this station during an O2 sabotage. Both O2 stations must be repaired.</description>
 		<thingClass>BetweenSus.Building_Station</thingClass>
 		<graphicData>
-			<texPath>Things/Building/Furniture/LampStanding</texPath>
+			<texPath>BetweenSus/Props/Station_FixO2</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<color>(0.3,0.8,0.95)</color>
 		</graphicData>
 		<passability>PassThroughOnly</passability>
 		<fillPercent>0.3</fillPercent>
@@ -93,9 +89,8 @@
 		<description>Shows the cameras: each room with the colonists inside.</description>
 		<thingClass>BetweenSus.Building_ShipConsole</thingClass>
 		<graphicData>
-			<texPath>Things/Building/Furniture/LampStanding</texPath>
+			<texPath>BetweenSus/Props/SecurityConsole</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<color>(0.2,0.5,0.95)</color>
 		</graphicData>
 		<passability>PassThroughOnly</passability>
 		<fillPercent>0.3</fillPercent>
@@ -107,9 +102,8 @@
 		<description>Shows the ship map: each room with how many colonists are inside.</description>
 		<thingClass>BetweenSus.Building_ShipConsole</thingClass>
 		<graphicData>
-			<texPath>Things/Building/Furniture/LampStanding</texPath>
+			<texPath>BetweenSus/Props/AdminConsole</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<color>(0.6,0.4,0.95)</color>
 		</graphicData>
 		<passability>PassThroughOnly</passability>
 		<fillPercent>0.3</fillPercent>

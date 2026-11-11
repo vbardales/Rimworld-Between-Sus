@@ -29,14 +29,15 @@ namespace BetweenSus
 
             Text.Font = GameFont.Medium;
             Text.Anchor = TextAnchor.MiddleCenter;
+            if (role.Icon != null) GUI.DrawTexture(new Rect(inRect.width / 2f - 40f, 6f, 80f, 80f), role.Icon);
             GUI.color = accent;
-            Widgets.Label(new Rect(0f, 10f, inRect.width, 50f), role.LabelCap.ToString().ToUpper());
+            Widgets.Label(new Rect(0f, 88f, inRect.width, 40f), role.LabelCap.ToString().ToUpper());
             GUI.color = Color.white;
             Text.Font = GameFont.Small;
-            Widgets.Label(new Rect(20f, 60f, inRect.width - 40f, 50f), role.description);
+            Widgets.Label(new Rect(20f, 128f, inRect.width - 40f, 44f), role.description);
             Text.Anchor = TextAnchor.UpperLeft;
 
-            float y = 125f;
+            float y = 180f;
             foreach (var ability in role.abilities)
             {
                 GUI.color = accent;

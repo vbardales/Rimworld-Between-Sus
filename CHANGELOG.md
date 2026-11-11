@@ -13,3 +13,4 @@
 - Security console (cameras) and admin console (head count per room).
 - Rules from the pitch: the crew wins only by eliminating every impostor (vote or evidence), impostors win when at most one crewmate is left; no crew win during a sabotage except doors.
 - Door sabotage, evidence (fake tasks and kills seen by crewmates), ejection into an engine with a flash and a sound, ghosts (task ghost or winged guardian ghost), vote with an argument, colonists pressing the emergency button.
+- Art from the owner: icons for the eleven roles (shown on the role card), textures for the task, repair and emergency stations and the two consoles.

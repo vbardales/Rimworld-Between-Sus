@@ -3,8 +3,7 @@
 Out of scope for 1.0.0, to do later or when the pitch from Alexandre asks for it.
 
 - Cover score for impostors beyond the simple rules (obey, refuse only an exposing order).
-- Icons for the eleven roles on the role card.
-- Space outside the hull instead of ground, dedicated models for engines, reactors, consoles and tanks, dedicated crew suit texture.
+- Space outside the hull instead of ground, dedicated models for engines, reactors and tanks.
 - Power network so the vanilla machines of the ship work.
 - Anything the pitch from Alexandre changes: tasks, sabotages, kills, vote, win conditions, role powers.
 
@@ -25,4 +24,5 @@ Choose the mode at start: solo (what 1.0.0 does), or multiplayer, either random 
 
 ## Art to produce (placeholders today)
 
-Winged guardian ghost and plain ghost look, ejection animation frames (engine fuel), role icons, crew suit, task and repair stations, emergency button, security and admin consoles. Prompts are given to the owner in RimWorld style when needed.
+Done (2026-11-11): role icons, task and repair stations, emergency button, security and admin consoles (textures in `Mod/Textures/BetweenSus`, cut from the owner's sheets).
+Still to produce, after the Pickle reference capture of a real colonist: crew suit, winged guardian ghost and plain ghost layers (a first set exists but is not wired, proportions to check), ejection animation frames (engine fuel).

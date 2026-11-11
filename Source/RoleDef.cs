@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace BetweenSus
@@ -18,6 +19,9 @@ namespace BetweenSus
         public Team team;
         public string tip;
         public float weight = 1f;
+
+        private Texture2D icon;
+        public Texture2D Icon => icon ?? (icon = ContentFinder<Texture2D>.Get("BetweenSus/Roles/" + defName, false));
         public List<RoleAbility> abilities = new List<RoleAbility>();
     }
 
