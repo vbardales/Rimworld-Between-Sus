@@ -18,6 +18,7 @@ workshop: none
 published: no
 tested_on: never
 remaining:
+  - "2026-11-11: unverified: 2.a Art/ModIcon-source.png absent, owner delivers it (never created by a session); 2.b and 2.c wait for it; 2.d to 2.f n/a (retired 2026-11-10)"
   - "2026-11-11: feature: skeleton compiles (About.xml, csproj, Team, RoleDef, GameComponent_Roles, two roles); nothing loaded in RimWorld yet, see Docs/DESIGN.md"
   - "2026-11-11: feature: next milestone = mainPawn, conditional role screens, order refusal, BS_CrewSuit and colour palette, then scenario and ship map"
 updated: 2026-11-11
