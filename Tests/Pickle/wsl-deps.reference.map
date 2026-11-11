@@ -1,8 +1,6 @@
-# Pass for the reference captures: a new colony on the Between Sus scenario, with the steps it needs.
+# Pass for the reference captures: a new colony on the Between Sus scenario.
+# The PickleTools bundle (ClearScreen and ScreenshotMode are in it) is activated by the staging itself: no line for it, no standalone copy.
 # Harmony, the hard dependency of the mod under test (Workshop 2009463077).
 brrainz.harmony                      2009463077
-nelim.pickletools                    path:PickleTools/Tests/Pickle/StandaloneBase/Mod
 nelim.pickletools.newcolony          path:PickleTools/NewColony/Mod
 nelim.pickletools.camerazoom         path:PickleTools/CameraZoom/Mod
-nelim.pickletools.clearscreen        path:PickleTools/ClearScreen/Mod
-nelim.pickletools.screenshotmode     path:PickleTools/ScreenshotMode/Mod

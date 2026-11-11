@@ -1,10 +1,9 @@
 # Reference captures of the crew in their suits, for the ghost art (layers drawn from a real colonist).
 # Not an assertion suite: a green screenshot step says a file was captured, the owner looks at the pictures (@review).
 # A new colony costs minutes and is not reproducible: play it once, as one small ticket.
+@requires:nelim.pickletools
 @requires:nelim.pickletools.newcolony
 @requires:nelim.pickletools.camerazoom
-@requires:nelim.pickletools.clearscreen
-@requires:nelim.pickletools.screenshotmode
 Feature: Between Sus reference captures
 
   @review
