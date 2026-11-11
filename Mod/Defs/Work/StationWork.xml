@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<WorkTypeDef>
+		<defName>BS_Tasks</defName>
+		<labelShort>tasks</labelShort>
+		<pawnLabel>Tasker</pawnLabel>
+		<gerundLabel>doing ship tasks</gerundLabel>
+		<description>Work at the ship's task stations and repair stations.</description>
+		<verb>Do ship tasks</verb>
+		<naturalPriority>2000</naturalPriority>
+		<requireCapableColonist>true</requireCapableColonist>
+		<alwaysStartActive>true</alwaysStartActive>
+		<workTags>
+			<li>ManualDumb</li>
+			<li>Commoner</li>
+			<li>AllWork</li>
+		</workTags>
+	</WorkTypeDef>
+
+	<WorkGiverDef>
+		<defName>BS_DoShipStation</defName>
+		<label>do ship tasks</label>
+		<giverClass>BetweenSus.WorkGiver_ShipStation</giverClass>
+		<workType>BS_Tasks</workType>
+		<priorityInType>100</priorityInType>
+		<verb>work at</verb>
+		<gerund>working at</gerund>
+		<scanThings>true</scanThings>
+		<scanCells>false</scanCells>
+	</WorkGiverDef>
+
+	<JobDef>
+		<defName>BS_DoStation</defName>
+		<driverClass>BetweenSus.JobDriver_DoStation</driverClass>
+		<reportString>working at a ship station.</reportString>
+	</JobDef>
+
+</Defs>

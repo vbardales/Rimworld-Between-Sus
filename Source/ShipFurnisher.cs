@@ -78,56 +78,76 @@ namespace BetweenSus
                         ctx.TableWithChairs("Table2x4c", 3, 2);
                         ctx.TableWithChairs("Table2x4c", 14, 2);
                         ctx.Place("BS_EmergencyButton", 10, 9);
+                        ctx.Place("BS_TaskStation", 1, 12);
+                        ctx.Place("BS_TaskStation", 19, 1);
                         break;
                     case "Admin":
                         ctx.TableWithChairs("Table3x3c", 9, 4);
                         ctx.Row("Shelf", 1, 10, 2, 4);
+                        ctx.Place("BS_AdminConsole", 15, 7);
+                        ctx.Place("BS_FixO2Station", 19, 1);
+                        ctx.Place("BS_TaskStation", 1, 1);
                         break;
                     case "Storage":
                         ctx.Row("Shelf", 1, 9, 3, 4);
                         ctx.Row("Shelf", 1, 2, 3, 4);
+                        ctx.Place("BS_TaskStation", 12, 10);
+                        ctx.Place("BS_TaskStation", 12, 1);
                         break;
                     case "Weapons":
                         ctx.Row("CommsConsole", 2, 9, 3, 4);
                         ctx.Place("Shelf", 12, 2);
+                        ctx.Place("BS_TaskStation", 14, 9);
+                        ctx.Place("BS_TaskStation", 8, 2);
                         break;
                     case "Navigation":
                         ctx.Place("CommsConsole", 4, 9);
                         ctx.Place("CommsConsole", 7, 9);
                         ctx.Place("DiningChair", 4, 8);
                         ctx.Place("DiningChair", 7, 8);
+                        ctx.Place("BS_TaskStation", 8, 2);
                         break;
                     case "O2":
                         ctx.Row("PlantPot", 2, 8, 6, 2);
                         ctx.Row("Battery", 2, 2, 3, 2);
+                        ctx.Place("BS_FixO2Station", 13, 2);
+                        ctx.Place("BS_TaskStation", 13, 8);
                         break;
                     case "Shields":
                         ctx.Row("Battery", 3, 3, 5, 2);
                         ctx.Place("Heater", 3, 8);
                         ctx.Place("Heater", 8, 8);
+                        ctx.Place("BS_TaskStation", 13, 3);
+                        ctx.Place("BS_TaskStation", 13, 9);
                         break;
                     case "Communications":
                         ctx.Place("CommsConsole", 2, 9);
                         ctx.Place("DiningChair", 2, 8);
                         ctx.Place("Shelf", 4, 2);
+                        ctx.Place("BS_TaskStation", 5, 9);
                         break;
                     case "Electrical":
                         ctx.Row("Battery", 1, 8, 3, 2);
                         ctx.Row("Battery", 1, 3, 3, 2);
+                        ctx.Place("BS_TaskStation", 5, 5);
+                        ctx.Place("BS_TaskStation", 1, 1);
                         break;
                     case "Security":
                         ctx.Row("TubeTelevision", 1, 8, 3, 2);
-                        ctx.Place("CommsConsole", 3, 3);
+                        ctx.Place("BS_SecurityConsole", 3, 3);
+                        ctx.Place("BS_TaskStation", 6, 3);
                         ctx.Place("DiningChair", 3, 2);
                         break;
                     case "Medbay":
                         ctx.Row("HospitalBed", 1, 6, 4, 3);
                         ctx.Place("Shelf", 13, 6);
+                        ctx.Place("BS_TaskStation", 13, 1);
                         break;
                     case "UpperEngine":
                     case "LowerEngine":
                         ctx.Row("Heater", 2, 2, 4, 3);
                         ctx.Row("Battery", 2, 6, 2, 3);
+                        ctx.Place("BS_TaskStation", 13, 4);
                         break;
                     case "ReactorRear":
                     case "ReactorFront":
@@ -135,6 +155,8 @@ namespace BetweenSus
                         ctx.Place("Heater", 5, 8);
                         ctx.Place("Heater", 3, 11);
                         ctx.Place("Heater", 5, 11);
+                        ctx.Place("BS_FixReactorStation", 1, 14);
+                        ctx.Place("BS_TaskStation", 7, 3);
                         break;
                 }
             }

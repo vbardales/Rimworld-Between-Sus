@@ -59,6 +59,7 @@ namespace BetweenSus
                 }
             }
 
+            if (GameComponent_Ship.Instance != null) GameComponent_Ship.Instance.origin = origin;
             ShipFurnisher.Furnish(map, origin);
 
             var cafeteria = ShipLayout.Rooms.First(r => r.Name == "Cafeteria").Rect.CenterCell;

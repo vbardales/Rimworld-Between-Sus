@@ -21,7 +21,16 @@ namespace BetweenSus
 
             roles.Assign(pawns, Math.Min(impostorCount, Math.Max(1, pawns.Count / 4)));
             DressAll(pawns);
+            Start(pawns);
             Find.WindowStack.Add(new Window_TeamReveal(roles));
+        }
+
+        private static void Start(List<Pawn> pawns)
+        {
+            var tasks = DefDatabase<WorkTypeDef>.GetNamedSilentFail("BS_Tasks");
+            if (tasks != null)
+                foreach (var p in pawns) p.workSettings?.SetPriority(tasks, 1);
+            GameComponent_Ship.Instance?.BeginGame();
         }
 
         private static void DressAll(List<Pawn> pawns)

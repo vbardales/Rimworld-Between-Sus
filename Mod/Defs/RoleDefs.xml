@@ -1,34 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
+	<!-- Crewmates -->
+
 	<BetweenSus.RoleDef>
 		<defName>BS_Crewmate_Innocent</defName>
 		<label>innocent crewmate</label>
 		<description>You have no special power. Do your tasks, watch the others, vote well.</description>
 		<team>Crewmate</team>
+		<weight>3</weight>
 		<tip>Find the impostors before they find you.</tip>
 		<abilities>
 			<li>
 				<label>Sharp eyes</label>
-				<description>You see every colonist's actions like anyone else. Trust what you observe, not what you are told.</description>
+				<description>You see what anyone sees. Trust what you observe, not what you are told.</description>
 			</li>
 		</abilities>
 	</BetweenSus.RoleDef>
+
+	<BetweenSus.RoleDef>
+		<defName>BS_Crewmate_Engineer</defName>
+		<label>engineer crewmate</label>
+		<description>You keep the ship running.</description>
+		<team>Crewmate</team>
+		<tip>When a sabotage starts, you are the fastest at fixing it.</tip>
+		<abilities>
+			<li>
+				<label>Quick repairs</label>
+				<description>You finish tasks and sabotage repairs twice as fast.</description>
+			</li>
+		</abilities>
+	</BetweenSus.RoleDef>
+
+	<BetweenSus.RoleDef>
+		<defName>BS_Crewmate_Scientist</defName>
+		<label>scientist crewmate</label>
+		<description>You monitor the vital signs of the crew.</description>
+		<team>Crewmate</team>
+		<tip>A name missing from the list is a name you should worry about.</tip>
+		<abilities>
+			<li>
+				<label>Vitals</label>
+				<description>Use the Vitals button to see who is still alive.</description>
+			</li>
+		</abilities>
+	</BetweenSus.RoleDef>
+
+	<BetweenSus.RoleDef>
+		<defName>BS_Crewmate_Tracker</defName>
+		<label>tracker crewmate</label>
+		<description>You can follow one colonist through the ship.</description>
+		<team>Crewmate</team>
+		<tip>Track whoever you doubt the most, then compare with the others.</tip>
+		<abilities>
+			<li>
+				<label>Track</label>
+				<description>Pick a colonist: for one day, you are told which room they are in, every few hours.</description>
+			</li>
+		</abilities>
+	</BetweenSus.RoleDef>
+
+	<BetweenSus.RoleDef>
+		<defName>BS_Crewmate_Necromancer</defName>
+		<label>necromancer crewmate</label>
+		<description>You hear the dead.</description>
+		<team>Crewmate</team>
+		<tip>Knowing where a body lies does not tell you who did it.</tip>
+		<abilities>
+			<li>
+				<label>Whispers</label>
+				<description>The moment someone dies, you hear the body and know the room it lies in.</description>
+			</li>
+		</abilities>
+	</BetweenSus.RoleDef>
+
+	<!-- Impostors -->
 
 	<BetweenSus.RoleDef>
 		<defName>BS_Impostor_Impostor</defName>
 		<label>impostor</label>
 		<description>You are an impostor. Eliminate the crew without being caught.</description>
 		<team>Impostor</team>
+		<weight>3</weight>
 		<tip>Stay close to your fellow impostors, but do not look like it.</tip>
 		<abilities>
 			<li>
 				<label>Cover</label>
-				<description>You look like any crewmate. Blend in: repair, work, and follow the crew.</description>
+				<description>You look like any crewmate. Blend in: work, repair, follow the crew.</description>
 			</li>
 			<li>
-				<label>Kill in the dark</label>
-				<description>Strike only when nobody can see you, and when no camera is on the room.</description>
+				<label>Kill and sabotage</label>
+				<description>Kill a crewmate within reach when nobody sees you. Start sabotages to split the crew.</description>
+			</li>
+		</abilities>
+	</BetweenSus.RoleDef>
+
+	<BetweenSus.RoleDef>
+		<defName>BS_Impostor_Shapeshifter</defName>
+		<label>shapeshifter impostor</label>
+		<description>You can borrow another face.</description>
+		<team>Impostor</team>
+		<tip>Shift just before a kill, so the witnesses name someone else.</tip>
+		<abilities>
+			<li>
+				<label>Shapeshift</label>
+				<description>Take the suit colour of another colonist for one day.</description>
+			</li>
+		</abilities>
+	</BetweenSus.RoleDef>
+
+	<BetweenSus.RoleDef>
+		<defName>BS_Impostor_Phantom</defName>
+		<label>phantom impostor</label>
+		<description>You can fade from sight.</description>
+		<team>Impostor</team>
+		<tip>Vanish, strike, and let the others wonder.</tip>
+		<abilities>
+			<li>
+				<label>Vanish</label>
+				<description>For a short time, nobody can see you act: your kills are not witnessed.</description>
+			</li>
+		</abilities>
+	</BetweenSus.RoleDef>
+
+	<BetweenSus.RoleDef>
+		<defName>BS_Impostor_Acid</defName>
+		<label>acid impostor</label>
+		<description>Your victims leave nothing behind.</description>
+		<team>Impostor</team>
+		<tip>No body, no report: the crew only notices the empty seat.</tip>
+		<abilities>
+			<li>
+				<label>Dissolve</label>
+				<description>The body of a colonist you kill dissolves, so nobody can report it.</description>
+			</li>
+		</abilities>
+	</BetweenSus.RoleDef>
+
+	<BetweenSus.RoleDef>
+		<defName>BS_Impostor_Ninja</defName>
+		<label>ninja impostor</label>
+		<description>You strike fast and often.</description>
+		<team>Impostor</team>
+		<tip>Do not abuse it: a quick second kill is easy to link to you.</tip>
+		<abilities>
+			<li>
+				<label>Swift blade</label>
+				<description>Your kill cooldown is halved.</description>
+			</li>
+		</abilities>
+	</BetweenSus.RoleDef>
+
+	<BetweenSus.RoleDef>
+		<defName>BS_Impostor_Pro</defName>
+		<label>pro impostor</label>
+		<description>You have done this before.</description>
+		<team>Impostor</team>
+		<tip>Pace yourself: you can do more, so the crew will look harder.</tip>
+		<abilities>
+			<li>
+				<label>Professional</label>
+				<description>Your kill cooldown is a quarter of the normal one, and your sabotages give the crew more time, so they look less urgent.</description>
 			</li>
 		</abilities>
 	</BetweenSus.RoleDef>

@@ -7,4 +7,62 @@
 	<BS_TeamSubtitleImpostor>Eliminate the crew without being caught</BS_TeamSubtitleImpostor>
 	<BS_Continue>Continue</BS_Continue>
 	<BS_Understood>Understood</BS_Understood>
+
+	<BS_CallMeeting>Call a meeting</BS_CallMeeting>
+	<BS_CallMeetingDesc>Calls the whole crew to the cafeteria for a vote.</BS_CallMeetingDesc>
+	<BS_MeetingCooldown>The button is not ready yet.</BS_MeetingCooldown>
+	<BS_Cameras>Cameras</BS_Cameras>
+	<BS_CamerasDesc>Shows each room with the colonists inside.</BS_CamerasDesc>
+	<BS_ShipMap>Ship map</BS_ShipMap>
+	<BS_ShipMapDesc>Shows each room with how many colonists are inside.</BS_ShipMapDesc>
+	<BS_NobodyAround>Nobody is in any room.</BS_NobodyAround>
+
+	<BS_TaskProgress>Task done ({0} of {1}).</BS_TaskProgress>
+	<BS_SabotageReactor>Reactor meltdown</BS_SabotageReactor>
+	<BS_SabotageO2>O2 depletion</BS_SabotageO2>
+	<BS_SabotageText>Sabotage! Repair the stations in: {0}. About {1} seconds left.</BS_SabotageText>
+	<BS_SabotageFixed>The sabotage is fixed.</BS_SabotageFixed>
+	<BS_SabotageNotReady>No sabotage possible right now.</BS_SabotageNotReady>
+
+	<BS_Kill>Kill</BS_Kill>
+	<BS_KillDesc>Kills the nearest crewmate within reach. Do it when nobody sees you.</BS_KillDesc>
+	<BS_KillNotReady>Your blade is not ready yet.</BS_KillNotReady>
+	<BS_NoVictim>Nobody is within reach.</BS_NoVictim>
+	<BS_YouKilled>You killed {0}.</BS_YouKilled>
+	<BS_Sabotage>Sabotage</BS_Sabotage>
+	<BS_SabotageDesc>Starts a sabotage that the crew must repair.</BS_SabotageDesc>
+
+	<BS_Vitals>Vitals</BS_Vitals>
+	<BS_VitalsDesc>Shows who is still alive.</BS_VitalsDesc>
+	<BS_VitalsText>Still alive: {0}.</BS_VitalsText>
+	<BS_TrackGizmo>Track</BS_TrackGizmo>
+	<BS_TrackDesc>Follows one colonist for a day.</BS_TrackDesc>
+	<BS_Tracking>You are tracking {0}.</BS_Tracking>
+	<BS_TrackReport>{0} is in: {1}.</BS_TrackReport>
+	<BS_NecroHears>You hear the body of {0}, in: {1}.</BS_NecroHears>
+	<BS_ShapeshiftGizmo>Shapeshift</BS_ShapeshiftGizmo>
+	<BS_ShapeshiftDesc>Takes the suit colour of another colonist for a day.</BS_ShapeshiftDesc>
+	<BS_Shapeshifted>You look like {0} now.</BS_Shapeshifted>
+	<BS_VanishGizmo>Vanish</BS_VanishGizmo>
+	<BS_VanishDesc>For a short time, your kills are not witnessed.</BS_VanishDesc>
+	<BS_Vanished>You fade from sight.</BS_Vanished>
+
+	<BS_BodyReported>{0} found the body of {1}</BS_BodyReported>
+	<BS_EmergencyMeeting>Emergency meeting</BS_EmergencyMeeting>
+	<BS_VotePrompt>Who is the impostor? Vote, or skip.</BS_VotePrompt>
+	<BS_VoteSpectator>You can only watch the vote.</BS_VoteSpectator>
+	<BS_Vote>Vote</BS_Vote>
+	<BS_Skip>Skip</BS_Skip>
+	<BS_NobodyEjected>Nobody was ejected.</BS_NobodyEjected>
+	<BS_Ejected>{0} was ejected</BS_Ejected>
+	<BS_WasImpostor>{0} was an impostor.</BS_WasImpostor>
+	<BS_WasNotImpostor>{0} was not an impostor.</BS_WasNotImpostor>
+	<BS_ImpostorsLeft>Impostors left: {0}.</BS_ImpostorsLeft>
+
+	<BS_CrewWins>The crew wins</BS_CrewWins>
+	<BS_ImpostorsWin>The impostors win</BS_ImpostorsWin>
+	<BS_WinEjected>Every impostor is gone.</BS_WinEjected>
+	<BS_WinOutnumbered>The impostors are as many as the crew.</BS_WinOutnumbered>
+	<BS_WinTasks>Every task is done.</BS_WinTasks>
+	<BS_WinSabotage>The sabotage was not repaired in time.</BS_WinSabotage>
 </LanguageData>

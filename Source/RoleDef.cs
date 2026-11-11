@@ -17,6 +17,7 @@ namespace BetweenSus
     {
         public Team team;
         public string tip;
+        public float weight = 1f;
         public List<RoleAbility> abilities = new List<RoleAbility>();
     }
 

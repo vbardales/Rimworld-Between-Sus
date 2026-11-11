@@ -37,6 +37,8 @@ namespace BetweenSus
                     yield return kv.Key;
         }
 
+        public IEnumerable<Pawn> AllPawns() => roles.Keys;
+
         public int ImpostorCount => roles.Values.Count(r => r.team == Team.Impostor);
 
         /// <summary>Draws impostorCount impostors at random, the rest are crewmates. The main pawn is drawn at random.</summary>
@@ -45,13 +47,18 @@ namespace BetweenSus
             roles.Clear();
             var shuffled = pawns.InRandomOrder().ToList();
             for (int i = 0; i < shuffled.Count; i++)
-            {
-                roles[shuffled[i]] = i < impostorCount
-                    ? RoleDefOf.BS_Impostor_Impostor
-                    : RoleDefOf.BS_Crewmate_Innocent;
-            }
+                roles[shuffled[i]] = DrawRole(i < impostorCount ? Team.Impostor : Team.Crewmate);
             mainPawn = pawns.RandomElement();
         }
+
+        private static RoleDef DrawRole(Team team)
+        {
+            var pool = DefDatabase<RoleDef>.AllDefs.Where(r => r.team == team).ToList();
+            return pool.Count == 0 ? null : pool.RandomElementByWeight(r => r.weight);
+        }
+
+        /// <summary>True when the pawn has the small role with this defName.</summary>
+        public bool Is(Pawn pawn, string roleDefName) => RoleOf(pawn)?.defName == roleDefName;
 
         /// <summary>Chance that a pawn refuses a player order. The main pawn never refuses.</summary>
         public float RefusalChance(Pawn pawn, Job job)

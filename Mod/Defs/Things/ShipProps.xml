@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<!-- Placeholder art: the vanilla standing lamp texture. Glows without power, so the ship is lit from the start. -->
-	<ThingDef ParentName="BuildingBase">
-		<defName>BS_CeilingLight</defName>
-		<label>ship light</label>
-		<description>A light built into the ship. It needs no power.</description>
+	<!-- Abstract base for the ship's special props. Placeholder art: the vanilla standing lamp texture, tinted. -->
+	<ThingDef ParentName="BuildingBase" Name="BS_PropBase" Abstract="True">
 		<graphicData>
 			<texPath>Things/Building/Furniture/LampStanding</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<altitudeLayer>Building</altitudeLayer>
-		<passability>Standable</passability>
-		<fillPercent>0</fillPercent>
 		<rotatable>false</rotatable>
 		<designationCategory />
 		<statBases>
-			<MaxHitPoints>200</MaxHitPoints>
+			<MaxHitPoints>300</MaxHitPoints>
 			<Flammability>0</Flammability>
 		</statBases>
+	</ThingDef>
+
+	<!-- Glows without power, so the ship is lit from the start. -->
+	<ThingDef ParentName="BS_PropBase">
+		<defName>BS_CeilingLight</defName>
+		<label>ship light</label>
+		<description>A light built into the ship. It needs no power.</description>
+		<passability>Standable</passability>
+		<fillPercent>0</fillPercent>
 		<comps>
 			<li Class="CompProperties_Glower">
 				<glowRadius>11</glowRadius>
@@ -27,25 +31,88 @@
 		</comps>
 	</ThingDef>
 
-	<!-- Placeholder art: the vanilla standing lamp texture, tinted red. The vote itself is not implemented yet. -->
-	<ThingDef ParentName="BuildingBase">
+	<ThingDef ParentName="BS_PropBase">
 		<defName>BS_EmergencyButton</defName>
 		<label>emergency button</label>
-		<description>The big red button of the cafeteria. It calls the whole crew to a meeting.</description>
+		<description>The big red button of the cafeteria. Select it to call the whole crew to a meeting.</description>
+		<thingClass>BetweenSus.Building_EmergencyButton</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Furniture/LampStanding</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 			<color>(0.9,0.1,0.1)</color>
 		</graphicData>
-		<altitudeLayer>Building</altitudeLayer>
 		<passability>PassThroughOnly</passability>
 		<fillPercent>0.2</fillPercent>
-		<rotatable>false</rotatable>
-		<designationCategory />
-		<statBases>
-			<MaxHitPoints>300</MaxHitPoints>
-			<Flammability>0</Flammability>
-		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="BS_PropBase">
+		<defName>BS_TaskStation</defName>
+		<label>task station</label>
+		<description>A ship station. A crewmate who works here completes a task. Select a colonist and prioritise the work "Tasks".</description>
+		<thingClass>BetweenSus.Building_Station</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Furniture/LampStanding</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<color>(0.2,0.9,0.3)</color>
+		</graphicData>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.3</fillPercent>
+	</ThingDef>
+
+	<ThingDef ParentName="BS_PropBase">
+		<defName>BS_FixReactorStation</defName>
+		<label>reactor repair station</label>
+		<description>Repair this station during a reactor sabotage. Both reactor stations must be repaired.</description>
+		<thingClass>BetweenSus.Building_Station</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Furniture/LampStanding</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<color>(0.95,0.7,0.1)</color>
+		</graphicData>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.3</fillPercent>
+	</ThingDef>
+
+	<ThingDef ParentName="BS_PropBase">
+		<defName>BS_FixO2Station</defName>
+		<label>O2 repair station</label>
+		<description>Repair this station during an O2 sabotage. Both O2 stations must be repaired.</description>
+		<thingClass>BetweenSus.Building_Station</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Furniture/LampStanding</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<color>(0.3,0.8,0.95)</color>
+		</graphicData>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.3</fillPercent>
+	</ThingDef>
+
+	<ThingDef ParentName="BS_PropBase">
+		<defName>BS_SecurityConsole</defName>
+		<label>security console</label>
+		<description>Shows the cameras: each room with the colonists inside.</description>
+		<thingClass>BetweenSus.Building_ShipConsole</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Furniture/LampStanding</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<color>(0.2,0.5,0.95)</color>
+		</graphicData>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.3</fillPercent>
+	</ThingDef>
+
+	<ThingDef ParentName="BS_PropBase">
+		<defName>BS_AdminConsole</defName>
+		<label>admin console</label>
+		<description>Shows the ship map: each room with how many colonists are inside.</description>
+		<thingClass>BetweenSus.Building_ShipConsole</thingClass>
+		<graphicData>
+			<texPath>Things/Building/Furniture/LampStanding</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<color>(0.6,0.4,0.95)</color>
+		</graphicData>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.3</fillPercent>
 	</ThingDef>
 
 </Defs>

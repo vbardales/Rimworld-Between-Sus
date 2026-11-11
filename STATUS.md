@@ -18,13 +18,11 @@ workshop: none
 published: no
 tested_on: never
 remaining:
-  - "2026-11-11: owner decision: develop every feature first, validate by gallery captures instead of Pickle tests first; rest of the pitch (roles, vote, win conditions) waits for Alexandre"
+  - "2026-11-11: feature: cover score for impostors beyond the simple rules (obey, refuse only exposing orders), role icons, space outside the hull, power network for vanilla machines, anything the pitch from Alexandre changes"
+  - "2026-11-11: unverified: tasks, sabotage, kill, meeting, vote, win conditions and the 11 roles are built but never run in RimWorld; Harmony targets Pawn.GetGizmos, Pawn_JobTracker.TryTakeOrderedJob and MapGenerator.GenerateMap unchecked in game"
+  - "2026-11-11: owner decision: develop every feature first, then Pickle tests produce the captures; rest of the pitch waits for Alexandre, design choices made meanwhile are in Docs/DESIGN.md and can change"
   - "2026-11-11: feature: dedicated models for engines, reactors, consoles and tanks (placeholders: vanilla heaters, batteries, comms consoles), space outside the hull instead of ground, power network for the vanilla machines"
-  - "2026-11-11: feature: vote started by the emergency button (the button is placed, inert), working cameras in the security room, map table in admin"
-  - "2026-11-11: feature: per-impostor cover score and killing rules; kills only when unobserved"
-  - "2026-11-11: feature: remaining small roles (engineer, scientist, tracker, necromancer, shapeshifter, phantom, acid, ninja, pro)"
   - "2026-11-11: feature: dedicated crew suit texture (placeholder: vanilla T-shirt), French translation (localize stage)"
-  - "2026-11-11: unverified: built only, never loaded in RimWorld (needs a Pickle ticket at playTests); Harmony targets Pawn_JobTracker.TryTakeOrderedJob (field pawn, param job) and MapGenerator.GenerateMap unchecked in game"
 updated: 2026-11-11
 protocols_read_sha: a8c1d708ecbc4910e883dce4a9d2db4ed4febd69
 ---
