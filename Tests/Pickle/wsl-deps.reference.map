@@ -1,0 +1,8 @@
+# Pass for the reference captures: a new colony on the Between Sus scenario, with the steps it needs.
+# Harmony, the hard dependency of the mod under test (Workshop 2009463077).
+brrainz.harmony                      2009463077
+nelim.pickletools                    path:PickleTools/Tests/Pickle/StandaloneBase/Mod
+nelim.pickletools.newcolony          path:PickleTools/NewColony/Mod
+nelim.pickletools.camerazoom         path:PickleTools/CameraZoom/Mod
+nelim.pickletools.clearscreen        path:PickleTools/ClearScreen/Mod
+nelim.pickletools.screenshotmode     path:PickleTools/ScreenshotMode/Mod

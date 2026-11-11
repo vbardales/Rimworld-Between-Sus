@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Between Sus - Pickle tests</name>
+  <author>Nelim</author>
+  <packageId>nelim.betweensus.pickletests</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <description>In-game scenarios for Between Sus, run by Pickle. Development only: never published.</description>
+  <modDependencies>
+    <li>
+      <packageId>nelim.betweensus</packageId>
+      <displayName>Between Sus</displayName>
+    </li>
+    <li>
+      <packageId>rimworks.pickle</packageId>
+      <displayName>Pickle</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3791648678</steamWorkshopUrl>
+    </li>
+    <li>
+      <packageId>nelim.pickletools</packageId>
+      <displayName>Nelim's Pickle Tools</displayName>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>nelim.betweensus</li>
+    <li>rimworks.pickle</li>
+    <li>nelim.pickletools</li>
+  </loadAfter>
+</ModMetaData>
