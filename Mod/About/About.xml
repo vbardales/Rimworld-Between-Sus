@@ -9,7 +9,9 @@
 	</supportedVersions>
 	<description>Impostors and crewmates in RimWorld. Start on a spaceship map, get a secret team and a secret role, and find out who is sus.
 
-Work in progress. First milestone: two teams (Crewmate, Impostor) and two roles (Innocent Crewmate, Impostor).</description>
+Work in progress. First milestone: two teams (Crewmate, Impostor) and two roles (Innocent Crewmate, Impostor).
+
+[url=https://github.com/vbardales/Rimworld-Between-Sus]Source code on GitHub[/url]</description>
 	<modDependencies>
 		<li>
 			<packageId>brrainz.harmony</packageId>
