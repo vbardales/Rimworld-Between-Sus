@@ -7,6 +7,7 @@ Requested by Alexandre. Social-deduction mod for RimWorld 1.6 (C#, Harmony), ins
 - Folder `BetweenSus/`: `Source/` (net48, Krafs.Rimworld.Ref 1.6.4871, Lib.Harmony 2.4.3), `Mod/` (About, Assemblies, Defs).
 - packageId `nelim.betweensus`. Build: `dotnet build -c Release` in `Source/`, output in `Mod/Assemblies/`, intermediates in `.build/`.
 - Workflow decision (2026-11-11): develop every feature first, then Pickle tests produce the captures.
+- Game modes (Alexandre, 2026-11-11): solo in 1.0.0; multiplayer (random or private by invitation) is planned for 1.1.0, see `Docs/BACKLOG.md`.
 
 ## Roles
 
