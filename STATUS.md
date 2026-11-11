@@ -18,8 +18,8 @@ workshop: none
 published: no
 tested_on: never
 remaining:
-  - "2026-11-11: feature: ship furniture and props per room (tables, beds, consoles), lighting and power, space outside the hull instead of ground"
-  - "2026-11-11: feature: emergency button in the cafeteria (starts a vote), cameras in the security room, map table in admin"
+  - "2026-11-11: feature: dedicated models for engines, reactors, consoles and tanks (placeholders: vanilla heaters, batteries, comms consoles), space outside the hull instead of ground, power network for the vanilla machines"
+  - "2026-11-11: feature: vote started by the emergency button (the button is placed, inert), working cameras in the security room, map table in admin"
   - "2026-11-11: feature: per-impostor cover score and killing rules; kills only when unobserved"
   - "2026-11-11: feature: remaining small roles (engineer, scientist, tracker, necromancer, shapeshifter, phantom, acid, ninja, pro)"
   - "2026-11-11: feature: dedicated crew suit texture (placeholder: vanilla T-shirt), French translation (localize stage)"

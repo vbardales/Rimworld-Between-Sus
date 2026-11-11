@@ -59,6 +59,8 @@ namespace BetweenSus
                 }
             }
 
+            ShipFurnisher.Furnish(map, origin);
+
             var cafeteria = ShipLayout.Rooms.First(r => r.Name == "Cafeteria").Rect.CenterCell;
             MapGenerator.PlayerStartSpot = new IntVec3(origin.x + cafeteria.x, 0, origin.z + cafeteria.z);
         }

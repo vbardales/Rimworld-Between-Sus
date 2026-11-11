@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Placeholder art: the vanilla standing lamp texture. Glows without power, so the ship is lit from the start. -->
+	<ThingDef ParentName="BuildingBase">
+		<defName>BS_CeilingLight</defName>
+		<label>ship light</label>
+		<description>A light built into the ship. It needs no power.</description>
+		<graphicData>
+			<texPath>Things/Building/Furniture/LampStanding</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Standable</passability>
+		<fillPercent>0</fillPercent>
+		<rotatable>false</rotatable>
+		<designationCategory />
+		<statBases>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<glowRadius>11</glowRadius>
+				<glowColor>(214,214,230,0)</glowColor>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<!-- Placeholder art: the vanilla standing lamp texture, tinted red. The vote itself is not implemented yet. -->
+	<ThingDef ParentName="BuildingBase">
+		<defName>BS_EmergencyButton</defName>
+		<label>emergency button</label>
+		<description>The big red button of the cafeteria. It calls the whole crew to a meeting.</description>
+		<graphicData>
+			<texPath>Things/Building/Furniture/LampStanding</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<color>(0.9,0.1,0.1)</color>
+		</graphicData>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.2</fillPercent>
+		<rotatable>false</rotatable>
+		<designationCategory />
+		<statBases>
+			<MaxHitPoints>300</MaxHitPoints>
+			<Flammability>0</Flammability>
+		</statBases>
+	</ThingDef>
+
+</Defs>
