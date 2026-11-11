@@ -15,3 +15,10 @@ Choose the mode at start: solo (what 1.0.0 does), or multiplayer, either random 
 - Research first: how existing mods do multiplayer and matchmaking (the community Multiplayer mod, any lobby or server browser). Corpus search only through `scripts/Search-Workshop.sh`, asked to the owner first (about 5 minutes).
 - Make roles, role screens, votes, kills and tasks work with one human per pawn: synchronised state, simultaneous votes, shared random numbers.
 - Private mode: invited players only. Random mode: needs a matchmaking route that the research must find.
+
+### Multiplayer flow (Alexandre, 2026-11-11)
+
+- Two choices: create a game or join one. Joining matters once there are several maps.
+- Lobby ("salon"): players waiting before the start, host settings (private or random, number of impostors).
+- Skin: each player picks a suit colour. 1.0.0 already gives one colour per pawn with no duplicate.
+- Open points to design with Alexandre: lobby rules, skins, map choice, what happens when a player leaves.
