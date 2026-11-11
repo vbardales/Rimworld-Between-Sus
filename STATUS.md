@@ -5,7 +5,7 @@ repo: Rimworld-Between-Sus
 remote: https://github.com/vbardales/Rimworld-Between-Sus.git
 visibility: public
 detached: yes
-workflow_stage: setupRepo
+workflow_stage: makeSources
 licence: original
 licence_at: "2026-11-11: original work by Nelim (requested by Alexandre), MIT; no third-party code or asset reused, Harmony and Krafs.Rimworld.Ref only as dependencies"
 upstream_mod_remotes: N/A
