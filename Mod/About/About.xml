@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
 	<name>Between Sus</name>
 	<author>Nelim</author>
@@ -22,4 +22,4 @@ Work in progress. First milestone: two teams (Crewmate, Impostor) and two roles 
 	<loadAfter>
 		<li>brrainz.harmony</li>
 	</loadAfter>
-</ModMetaData>
+<modVersion>0.1.0</modVersion></ModMetaData>
