@@ -23,6 +23,20 @@ namespace BetweenSus
             var role = roles.RoleOf(__instance);
             if (role == null) yield break;
 
+            if (ship.IsGhost(__instance))
+            {
+                if (ship.IsGuardianGhost(__instance))
+                    yield return Make("BS_Protect", "BS_ProtectDesc", "UI/Commands/Halt", () =>
+                        Find.WindowStack.Add(new FloatMenu(ship.Living()
+                            .Select(p => new FloatMenuOption(p.LabelShort, () => ship.Protect(p))).ToList())));
+                yield break;
+            }
+
+            if (role.team == Team.Crewmate && ship.Accusable().Any())
+                yield return Make("BS_Accuse", "BS_AccuseDesc", "UI/Commands/Attack", () =>
+                    Find.WindowStack.Add(new FloatMenu(ship.Accusable()
+                        .Select(p => new FloatMenuOption(p.LabelShort, () => ship.Accuse(p))).ToList())));
+
             if (role.team == Team.Impostor)
             {
                 yield return Make("BS_Kill", "BS_KillDesc", "UI/Commands/Attack", () => ship.TryKillNearest(__instance));
@@ -31,6 +45,7 @@ namespace BetweenSus
                     {
                         new FloatMenuOption("BS_SabotageReactor".Translate(), () => Sabotage(ship, SabotageKind.Reactor, __instance)),
                         new FloatMenuOption("BS_SabotageO2".Translate(), () => Sabotage(ship, SabotageKind.O2, __instance)),
+                        new FloatMenuOption("BS_SabotageDoors".Translate(), () => Sabotage(ship, SabotageKind.Doors, __instance)),
                     })));
             }
 

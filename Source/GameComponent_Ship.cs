@@ -6,10 +6,11 @@ using RimWorld.Planet;
 using UnityEngine;
 using Verse;
 using Verse.AI;
+using Verse.Sound;
 
 namespace BetweenSus
 {
-    public enum SabotageKind { None, Reactor, O2 }
+    public enum SabotageKind { None, Reactor, O2, Doors }
 
     /// <summary>
     /// The game loop of Between Sus: tasks, sabotages, kills, bodies, meetings, votes and victory.
@@ -31,8 +32,13 @@ namespace BetweenSus
         private Dictionary<Pawn, int> killCooldownEnd = new Dictionary<Pawn, int>();
         private List<Pawn> keysWorking;
         private List<int> valuesWorking;
+        private List<Pawn> ghosts = new List<Pawn>();
+        private List<Pawn> guardianGhosts = new List<Pawn>();
+        private Pawn protectedPawn;
+        private List<Thing> lockedDoors = new List<Thing>();
 
         // Transient state, lost on reload.
+        private readonly Dictionary<Pawn, int> evidence = new Dictionary<Pawn, int>();
         private readonly Dictionary<Pawn, int> suspicion = new Dictionary<Pawn, int>();
         private readonly Dictionary<Pawn, int> vanishUntil = new Dictionary<Pawn, int>();
         private readonly Dictionary<Pawn, KeyValuePair<Color, int>> shifted = new Dictionary<Pawn, KeyValuePair<Color, int>>();
@@ -46,7 +52,12 @@ namespace BetweenSus
 
         public bool Ended => ended;
         public SabotageKind ActiveSabotage => sabotage;
-        public bool CanCallMeeting => Find.TickManager.TicksGame >= meetingCooldownEnd;
+        /// <summary>The emergency button is disabled during a sabotage, and bodies cannot be reported either.</summary>
+        public bool CanCallMeeting => Find.TickManager.TicksGame >= meetingCooldownEnd && sabotage == SabotageKind.None;
+        public bool IsGhost(Pawn p) => ghosts.Contains(p);
+        public bool IsGuardianGhost(Pawn p) => guardianGhosts.Contains(p);
+        public int EvidenceOn(Pawn p) => evidence.TryGetValue(p, out int n) ? n : 0;
+        public const int EvidenceNeeded = 3;
 
         private static GameComponent_Roles Roles => GameComponent_Roles.Instance;
         private static Map Map => Find.CurrentMap;
@@ -70,7 +81,7 @@ namespace BetweenSus
         // ---------------------------------------------------------------- queries
 
         public IEnumerable<Pawn> Living() =>
-            Map?.mapPawns.FreeColonistsSpawned.Where(p => !p.Dead) ?? Enumerable.Empty<Pawn>();
+            Map?.mapPawns.FreeColonistsSpawned.Where(p => !p.Dead && !ghosts.Contains(p)) ?? Enumerable.Empty<Pawn>();
 
         private IEnumerable<Pawn> LivingCrew() => Living().Where(p => Roles.TeamOf(p) == Team.Crewmate);
         private IEnumerable<Pawn> LivingImpostors() => Living().Where(p => Roles.TeamOf(p) == Team.Impostor);
@@ -113,6 +124,22 @@ namespace BetweenSus
         public bool StartSabotage(SabotageKind kind, Pawn by)
         {
             if (ended || sabotage != SabotageKind.None || Now < sabotageCooldownEnd) return false;
+
+            if (kind == SabotageKind.Doors)
+            {
+                // Every door is locked for a while: nobody passes, the button is off, bodies cannot be reported.
+                sabotage = kind;
+                sabotageEnd = Now + 1800;
+                lockedDoors.Clear();
+                foreach (var door in Map.listerBuildings.allBuildingsColonist.OfType<Building_Door>())
+                {
+                    door.SetForbidden(true, false);
+                    lockedDoors.Add(door);
+                }
+                Find.LetterStack.ReceiveLetter("BS_SabotageDoors".Translate(), "BS_SabotageDoorsText".Translate(), LetterDefOf.ThreatBig);
+                return true;
+            }
+
             var stations = Stations().Where(s => s.IsFix && s.FixKind == kind).ToList();
             if (stations.Count == 0) return false;
 
@@ -143,6 +170,43 @@ namespace BetweenSus
             return false;
         }
 
+        private int WitnessCount(Pawn actor, Pawn except)
+        {
+            int n = 0;
+            foreach (var p in LivingCrew())
+                if (p != actor && p != except && p.Position.DistanceTo(actor.Position) <= 14f
+                    && GenSight.LineOfSight(p.Position, actor.Position, actor.Map))
+                    n++;
+            return n;
+        }
+
+        /// <summary>Evidence against an impostor. At EvidenceNeeded, the crew can eliminate it without a vote.</summary>
+        public void AddEvidence(Pawn impostor, int amount)
+        {
+            evidence[impostor] = EvidenceOn(impostor) + amount;
+            var main = Roles.MainPawn;
+            if (main != null && Roles.TeamOf(main) == Team.Crewmate && EvidenceOn(impostor) >= EvidenceNeeded)
+                Messages.Message("BS_EvidenceReady".Translate(impostor.LabelShort), MessageTypeDefOf.PositiveEvent, false);
+        }
+
+        /// <summary>A fake task seen by crewmates is evidence: a real task would have shown progress.</summary>
+        public void OnFakeTask(Pawn impostor)
+        {
+            int seen = WitnessCount(impostor, null);
+            if (seen > 0) AddEvidence(impostor, 1);
+        }
+
+        /// <summary>Eliminates an impostor with enough evidence, without a vote.</summary>
+        public void Accuse(Pawn suspect)
+        {
+            if (ended || suspect == null || EvidenceOn(suspect) < EvidenceNeeded || Roles.TeamOf(suspect) != Team.Impostor) return;
+            Eject(suspect, "BS_EjectEvidence");
+            CheckWin();
+        }
+
+        public IEnumerable<Pawn> Accusable() =>
+            LivingImpostors().Where(p => EvidenceOn(p) >= EvidenceNeeded);
+
         public float KillCooldownFor(Pawn killer)
         {
             if (Roles.Is(killer, "BS_Impostor_Ninja")) return KillCooldown * 0.5f;
@@ -156,10 +220,18 @@ namespace BetweenSus
         public void Kill(Pawn killer, Pawn victim)
         {
             killCooldownEnd[killer] = Now + (int)KillCooldownFor(killer);
+            if (victim == protectedPawn)
+            {
+                // A guardian ghost shields one pawn from the next kill.
+                protectedPawn = null;
+                Messages.Message("BS_KillBlocked".Translate(), MessageTypeDefOf.NeutralEvent, false);
+                return;
+            }
             var pos = victim.Position;
-            var map = victim.Map;
+            int witnesses = WitnessCount(killer, victim);
 
             victim.Kill(new DamageInfo(DamageDefOf.Cut, 9999f, 999f, -1f, killer));
+            if (witnesses > 0) AddEvidence(killer, EvidenceNeeded * witnesses);
 
             foreach (var p in Living())
                 if (p != victim && p.Position.DistanceTo(pos) <= 15f)
@@ -235,13 +307,21 @@ namespace BetweenSus
             }
             string title = body != null
                 ? "BS_BodyReported".Translate(reporter?.LabelShort ?? "?", body.InnerPawn.LabelShort).ToString()
-                : "BS_EmergencyMeeting".Translate().ToString();
+                : reporter != null
+                    ? "BS_ButtonPressed".Translate(reporter.LabelShort).ToString()
+                    : "BS_EmergencyMeeting".Translate().ToString();
             Find.WindowStack.Add(new Window_Meeting(title, Living().ToList(), roles.MainPawn));
         }
 
         /// <summary>Counts the votes (player choice plus AI) and ejects the pawn with the plurality.</summary>
-        public void ResolveMeeting(Pawn playerChoice)
+        public void ResolveMeeting(Pawn playerChoice, string argument = null)
         {
+            // The player's argument makes the others more suspicious of the accused.
+            if (playerChoice != null && !argument.NullOrEmpty())
+            {
+                suspicion[playerChoice] = (suspicion.TryGetValue(playerChoice, out int bonus) ? bonus : 0) + 2;
+                Messages.Message("BS_YouArgue".Translate(playerChoice.LabelShort, argument), MessageTypeDefOf.NeutralEvent, false);
+            }
             var candidates = Living().ToList();
             var votes = new Dictionary<Pawn, int>();
             int skips = 0;
@@ -265,17 +345,60 @@ namespace BetweenSus
             if (ejected == null)
                 Messages.Message("BS_NobodyEjected".Translate(), MessageTypeDefOf.NeutralEvent, false);
             else
-            {
-                bool impostor = Roles.TeamOf(ejected) == Team.Impostor;
-                ejected.DeSpawn();
-                Find.WorldPawns.PassToWorld(ejected, PawnDiscardDecideMode.Decide);
-                int left = LivingImpostors().Count();
-                Find.LetterStack.ReceiveLetter("BS_Ejected".Translate(ejected.LabelShort),
-                    (impostor ? "BS_WasImpostor" : "BS_WasNotImpostor").Translate(ejected.LabelShort) + "\n" +
-                    "BS_ImpostorsLeft".Translate(left),
-                    impostor ? LetterDefOf.PositiveEvent : LetterDefOf.NegativeEvent);
-            }
+                Eject(ejected, "BS_EjectVote");
             CheckWin();
+        }
+
+        /// <summary>
+        /// Ejects a pawn into the fuel of an engine, with a flash, a sound and a text about its team.
+        /// The main pawn is not removed: it becomes a ghost, either a task ghost or a winged guardian ghost.
+        /// </summary>
+        private void Eject(Pawn pawn, string causeKey)
+        {
+            bool impostor = Roles.TeamOf(pawn) == Team.Impostor;
+            var map = pawn.Map ?? Map;
+            var engine = ShipLayout.Rooms.Where(r => r.Name == "UpperEngine" || r.Name == "LowerEngine").RandomElement();
+            var c = engine.Rect.CenterCell;
+            var cell = new IntVec3(origin.x + c.x, 0, origin.z + c.z);
+
+            if (pawn.Spawned)
+            {
+                pawn.Position = cell;
+                pawn.Notify_Teleported(true, true);
+            }
+            FleckMaker.Static(cell, map, FleckDefOf.ExplosionFlash, 12f);
+            FleckMaker.ThrowSmoke(cell.ToVector3Shifted(), map, 2f);
+            MoteMaker.ThrowText(cell.ToVector3Shifted(), map,
+                (impostor ? "BS_WasImpostor" : "BS_WasNotImpostor").Translate(pawn.LabelShort),
+                impostor ? Color.green : Color.red, 6f);
+            DefDatabase<SoundDef>.GetNamedSilentFail(impostor ? "Quest_Succeded" : "Quest_Failed")?.PlayOneShotOnCamera(map);
+
+            evidence.Remove(pawn);
+            if (pawn == Roles.MainPawn)
+            {
+                ghosts.Add(pawn);
+                bool guardian = Rand.Bool;
+                if (guardian) guardianGhosts.Add(pawn);
+                Messages.Message((guardian ? "BS_BecameGuardianGhost" : "BS_BecameTaskGhost").Translate(),
+                    MessageTypeDefOf.NeutralEvent, false);
+            }
+            else
+            {
+                pawn.DeSpawn();
+                Find.WorldPawns.PassToWorld(pawn, PawnDiscardDecideMode.Decide);
+            }
+
+            Find.LetterStack.ReceiveLetter(causeKey.Translate(pawn.LabelShort),
+                (impostor ? "BS_WasImpostor" : "BS_WasNotImpostor").Translate(pawn.LabelShort) + "\n" +
+                "BS_ImpostorsLeft".Translate(LivingImpostors().Count()),
+                impostor ? LetterDefOf.PositiveEvent : LetterDefOf.NegativeEvent);
+        }
+
+        /// <summary>A guardian ghost shields one pawn from the next kill.</summary>
+        public void Protect(Pawn target)
+        {
+            protectedPawn = target;
+            Messages.Message("BS_Protecting".Translate(target.LabelShort), MessageTypeDefOf.PositiveEvent, false);
         }
 
         private Pawn AIVote(Pawn voter, List<Pawn> candidates)
@@ -298,11 +421,12 @@ namespace BetweenSus
             if (ended || !Roles.Active) return ended;
             int crew = LivingCrew().Count();
             int imps = LivingImpostors().Count();
-            var tasks = Stations().Where(s => !s.IsFix).ToList();
 
-            if (imps == 0) End(true, "BS_WinEjected".Translate());
-            else if (imps >= crew) End(false, "BS_WinOutnumbered".Translate());
-            else if (tasks.Count > 0 && tasks.All(s => s.Done)) End(true, "BS_WinTasks".Translate());
+            // Impostors win when only they and at most one crewmate remain.
+            if (imps > 0 && crew <= 1) End(false, "BS_WinOutnumbered".Translate());
+            // The crew wins when every impostor is gone, but not during a sabotage (except doors).
+            else if (imps == 0 && (sabotage == SabotageKind.None || sabotage == SabotageKind.Doors))
+                End(true, "BS_WinEjected".Translate());
             return ended;
         }
 
@@ -329,7 +453,16 @@ namespace BetweenSus
         {
             if (CheckWin()) return;
 
-            if (sabotage != SabotageKind.None)
+            if (sabotage == SabotageKind.Doors && Now >= sabotageEnd)
+            {
+                foreach (var door in lockedDoors.OfType<Building_Door>())
+                    door.SetForbidden(false, false);
+                lockedDoors.Clear();
+                sabotage = SabotageKind.None;
+                sabotageCooldownEnd = Now + SabotageCooldown;
+                Messages.Message("BS_SabotageFixed".Translate(), MessageTypeDefOf.PositiveEvent, false);
+            }
+            else if (sabotage == SabotageKind.Reactor || sabotage == SabotageKind.O2)
             {
                 if (Now >= sabotageEnd) { End(false, "BS_WinSabotage".Translate()); return; }
                 var fix = Stations().Where(s => s.IsFix && s.FixKind == sabotage).ToList();
@@ -353,7 +486,20 @@ namespace BetweenSus
             if (tracked != null && Now < trackUntil && Now % 2500 < 250 && !tracked.Dead && tracked.Spawned)
                 Messages.Message("BS_TrackReport".Translate(tracked.LabelShort, RoomLabel(tracked.Position)), MessageTypeDefOf.NeutralEvent, false);
 
-            if (ReportBodies() || Find.WindowStack.IsOpen<Window_Meeting>()) return;
+            // The crew eliminates an impostor with enough evidence, without waiting for a vote.
+            foreach (var suspect in Accusable().ToList())
+                if (Rand.Chance(0.5f)) Accuse(suspect);
+            if (ended) return;
+
+            // Bodies cannot be reported during a sabotage, and the button is off.
+            if ((sabotage == SabotageKind.None && ReportBodies()) || Find.WindowStack.IsOpen<Window_Meeting>()) return;
+
+            // Colonists may press the emergency button on their own.
+            if (CanCallMeeting && Rand.Chance(0.02f))
+            {
+                var presser = LivingCrew().RandomElementWithFallback();
+                if (presser != null) { StartMeeting(presser, null); return; }
+            }
 
             foreach (var imp in LivingImpostors().Where(p => p != Roles.MainPawn).ToList())
                 AIImpostor(imp);
@@ -379,7 +525,7 @@ namespace BetweenSus
             if (imp.Downed || !imp.Spawned) return;
 
             if (sabotage == SabotageKind.None && Now >= sabotageCooldownEnd && Rand.Chance(0.15f))
-                StartSabotage(Rand.Bool ? SabotageKind.Reactor : SabotageKind.O2, imp);
+                StartSabotage(new[] { SabotageKind.Reactor, SabotageKind.O2, SabotageKind.Doors }.RandomElement(), imp);
 
             if (!KillReady(imp)) return;
             var victim = LivingCrew().Where(p => p != imp)
@@ -406,11 +552,18 @@ namespace BetweenSus
             Scribe_Values.Look(ref sabotageCooldownEnd, "sabotageCooldownEnd");
             Scribe_Values.Look(ref meetingCooldownEnd, "meetingCooldownEnd");
             Scribe_Collections.Look(ref fixedStationIds, "fixedStationIds", LookMode.Value);
+            Scribe_Collections.Look(ref ghosts, "ghosts", LookMode.Reference);
+            Scribe_Collections.Look(ref guardianGhosts, "guardianGhosts", LookMode.Reference);
+            Scribe_Collections.Look(ref lockedDoors, "lockedDoors", LookMode.Reference);
+            Scribe_References.Look(ref protectedPawn, "protectedPawn");
             Scribe_Collections.Look(ref killCooldownEnd, "killCooldownEnd", LookMode.Reference, LookMode.Value,
                 ref keysWorking, ref valuesWorking);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 fixedStationIds = fixedStationIds ?? new List<int>();
+                ghosts = (ghosts ?? new List<Pawn>()).Where(p => p != null).ToList();
+                guardianGhosts = (guardianGhosts ?? new List<Pawn>()).Where(p => p != null).ToList();
+                lockedDoors = (lockedDoors ?? new List<Thing>()).Where(t => t != null).ToList();
                 killCooldownEnd = (killCooldownEnd ?? new Dictionary<Pawn, int>())
                     .Where(kv => kv.Key != null).ToDictionary(kv => kv.Key, kv => kv.Value);
             }

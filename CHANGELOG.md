@@ -11,3 +11,5 @@
 - Game loop: about 20 task stations (crewmates complete them, impostors fake them), reactor and O2 sabotages with a timer and repair stations, kills when unobserved, body reports, emergency button, meeting with a vote and ejection, win conditions.
 - Eleven small roles: innocent, engineer, scientist, tracker, necromancer (crew); impostor, shapeshifter, phantom, acid, ninja, pro (impostors).
 - Security console (cameras) and admin console (head count per room).
+- Rules from the pitch: the crew wins only by eliminating every impostor (vote or evidence), impostors win when at most one crewmate is left; no crew win during a sabotage except doors.
+- Door sabotage, evidence (fake tasks and kills seen by crewmates), ejection into an engine with a flash and a sound, ghosts (task ghost or winged guardian ghost), vote with an argument, colonists pressing the emergency button.

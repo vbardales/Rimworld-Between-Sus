@@ -46,6 +46,7 @@ namespace BetweenSus
             if (roles.TeamOf(pawn) == Team.Impostor)
             {
                 fakeUntil = Find.TickManager.TicksGame + 2500;
+                ship.OnFakeTask(pawn);
                 return;
             }
             done = true;

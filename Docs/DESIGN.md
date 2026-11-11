@@ -29,19 +29,17 @@ Two teams (big roles): Crewmate, Impostor. A small role is the post AND the func
 - Crewmate: refuses rarely, more when the mood is low. Impostor: keeps its cover, obeys, refuses only an order that would expose it (attacking a fellow impostor).
 - The main pawn never refuses. Its role gizmos appear on it only.
 
-## Gameplay choices (2026-11-11, made without the pitch, easy to change)
+## Gameplay (Alexandre's answers, 2026-11-11; the rest are my defaults and can change)
 
-- **Tasks:** about 20 task stations around the ship. A crewmate working at one completes it for good (progress bar = done / total). An impostor can work at one as a fake task: nothing counts, it only looks busy. Work type `BS_Tasks`, priority 1 for everyone at start.
-- **Win, crew:** every task done, or every impostor ejected or dead.
-- **Win, impostors:** living impostors are at least as many as living crewmates, or a sabotage timer runs out.
-- **Kill:** an impostor kills a crewmate within 2 cells when nobody else sees it (line of sight, 14 cells). Cooldown 15000 ticks (ninja half, pro a quarter). Other impostors hunt on their own, the main pawn uses the Kill gizmo. The body stays unless the killer is acid.
-- **Report:** a crewmate who sees a body within 10 cells calls a meeting.
-- **Meeting:** also called by the emergency button in the cafeteria (cooldown). Everyone is teleported to the cafeteria, the player votes (a pawn or skip), the others vote by suspicion (pawns near a kill count). Plurality ejects the pawn (it leaves the map, its team is revealed with the number of impostors left). Tie or skip: nobody leaves.
-- **Sabotage:** an impostor (gizmo for the main pawn, automatic for the others) starts one at a time, cooldown 30000 ticks.
-  - Reactor: meltdown in 5400 ticks, both reactor stations (rear and front) must be repaired.
-  - O2: depletion in 7200 ticks, the O2 and admin stations must be repaired.
-  - Timer reaches zero: impostors win.
-- **Consoles:** security console lists each room with the pawns in it (cameras), admin console lists each room with a head count.
+- **Tasks:** about 20 task stations. A crewmate completes one for good, an impostor only fakes it. Tasks no longer win the game: they give the crew a way to spot impostors (see Evidence) and give ghosts something to do.
+- **Evidence:** a fake task seen by a crewmate gives 1 evidence against the impostor, a kill seen by a crewmate gives 3 per witness. At 3 evidence, the crew can eliminate that impostor without a vote (a gizmo for the main pawn, automatic for the others after a short delay).
+- **Meeting and vote:** called by a body report or by the emergency button, which the player and the colonists can both press. Everyone is gathered in the cafeteria. The player votes and can write an argument, which makes the others more suspicious of the accused. The colonists vote too, by suspicion. The plurality is ejected, a tie or skip ejects nobody.
+- **Ejection:** the pawn is thrown into the fuel of an engine (flash, smoke, sound), a text says whether it was a crewmate or an impostor and how many impostors are left. A good sound for an impostor, a bad one for a crewmate. If the ejected pawn is the main pawn, it becomes a ghost instead of leaving: either a task ghost (only does tasks) or, at random, a winged guardian ghost that also shields one colonist from the next kill.
+- **Win, impostors:** only they and at most one crewmate remain, or a reactor or O2 sabotage runs out of time.
+- **Win, crew:** every impostor is voted out or eliminated on evidence. The crew cannot win during a sabotage, except a door sabotage.
+- **Kill:** an impostor kills a crewmate within 2 cells when nobody else sees it. Cooldown 15000 ticks (ninja half, pro a quarter). Other impostors hunt on their own, the main pawn uses the Kill gizmo.
+- **Sabotages:** one at a time, cooldown 30000 ticks. Reactor (5400 ticks, repair the two reactor stations), O2 (7200 ticks, repair the O2 and admin stations), doors (all doors locked for 1800 ticks, no repair). During any sabotage the emergency button is off and bodies cannot be reported.
+- **Consoles:** security console (cameras, names per room), admin console (head count per room).
 
 ## Ship map (17 rooms and corridors)
 

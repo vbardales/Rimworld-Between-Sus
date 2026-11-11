@@ -65,4 +65,23 @@
 	<BS_WinOutnumbered>The impostors are as many as the crew.</BS_WinOutnumbered>
 	<BS_WinTasks>Every task is done.</BS_WinTasks>
 	<BS_WinSabotage>The sabotage was not repaired in time.</BS_WinSabotage>
+	<BS_SabotageDoors>Door lockdown</BS_SabotageDoors>
+	<BS_SabotageDoorsText>Every door is locked for a short while. The emergency button is off and bodies cannot be reported.</BS_SabotageDoorsText>
+	<BS_KillBlocked>A guardian shielded the target: the kill failed.</BS_KillBlocked>
+	<BS_EvidenceReady>The crew has enough evidence against {0}. They can be eliminated.</BS_EvidenceReady>
+	<BS_EjectVote>{0} was ejected by vote</BS_EjectVote>
+	<BS_EjectEvidence>{0} was eliminated on evidence</BS_EjectEvidence>
+	<BS_BecameGuardianGhost>You are a guardian ghost now. You can do tasks and shield one colonist from the next kill.</BS_BecameGuardianGhost>
+	<BS_BecameTaskGhost>You are a ghost now. You can only do tasks.</BS_BecameTaskGhost>
+	<BS_Protecting>You shield {0} from the next kill.</BS_Protecting>
+	<BS_ButtonPressed>{0} pressed the emergency button</BS_ButtonPressed>
+	<BS_YouArgue>You accuse {0}: "{1}"</BS_YouArgue>
+	<BS_ArgumentPrompt>Why do you suspect {0}? (optional)</BS_ArgumentPrompt>
+	<BS_Back>Back</BS_Back>
+	<BS_ConfirmVote>Confirm vote</BS_ConfirmVote>
+	<BS_Protect>Protect</BS_Protect>
+	<BS_ProtectDesc>Shields one colonist from the next kill.</BS_ProtectDesc>
+	<BS_Accuse>Eliminate</BS_Accuse>
+	<BS_AccuseDesc>Eliminates an impostor against whom the crew has enough evidence, without a vote.</BS_AccuseDesc>
+	<BS_GhostCannot>A ghost can only do tasks.</BS_GhostCannot>
 </LanguageData>
