@@ -18,8 +18,12 @@ workshop: none
 published: no
 tested_on: never
 remaining:
-  - "2026-11-11: feature: skeleton compiles (About.xml, csproj, Team, RoleDef, GameComponent_Roles, two roles); nothing loaded in RimWorld yet, see Docs/DESIGN.md"
-  - "2026-11-11: feature: next milestone = mainPawn, conditional role screens, order refusal, BS_CrewSuit and colour palette, then scenario and ship map"
+  - "2026-11-11: feature: ship furniture and props per room (tables, beds, consoles), lighting and power, space outside the hull instead of ground"
+  - "2026-11-11: feature: emergency button in the cafeteria (starts a vote), cameras in the security room, map table in admin"
+  - "2026-11-11: feature: per-impostor cover score and killing rules; kills only when unobserved"
+  - "2026-11-11: feature: remaining small roles (engineer, scientist, tracker, necromancer, shapeshifter, phantom, acid, ninja, pro)"
+  - "2026-11-11: feature: dedicated crew suit texture (placeholder: vanilla T-shirt), French translation (localize stage)"
+  - "2026-11-11: unverified: built only, never loaded in RimWorld (needs a Pickle ticket at playTests); Harmony targets Pawn_JobTracker.TryTakeOrderedJob (field pawn, param job) and MapGenerator.GenerateMap unchecked in game"
 updated: 2026-11-11
 protocols_read_sha: a8c1d708ecbc4910e883dce4a9d2db4ed4febd69
 ---

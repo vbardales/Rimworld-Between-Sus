@@ -1,16 +1,23 @@
+using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
 namespace BetweenSus
 {
+    public class RoleAbility
+    {
+        public string label;
+        public string description;
+    }
+
     /// <summary>
-    /// Petit role : poste ET fonction d'un pion. Appartient a une equipe (gros role).
+    /// Small role: the post AND the function of a pawn. Belongs to one team (big role).
     /// </summary>
     public class RoleDef : Def
     {
         public Team team;
-        public string iconPath;
         public string tip;
+        public List<RoleAbility> abilities = new List<RoleAbility>();
     }
 
     [DefOf]

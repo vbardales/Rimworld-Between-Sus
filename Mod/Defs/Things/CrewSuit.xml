@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Placeholder art: the vanilla T-shirt texture, tinted per pawn. Replace with a dedicated suit later. -->
+	<ThingDef ParentName="ApparelBase">
+		<defName>BS_CrewSuit</defName>
+		<label>crew suit</label>
+		<description>The standard suit of the ship's crew. Everyone wears the same one, only the colour differs.</description>
+		<graphicData>
+			<texPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<tradeability>None</tradeability>
+		<destroyOnDrop>true</destroyOnDrop>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Mass>0.5</Mass>
+			<EquipDelay>1</EquipDelay>
+		</statBases>
+		<apparel>
+			<bodyPartGroups>
+				<li>Torso</li>
+				<li>Shoulders</li>
+				<li>Arms</li>
+				<li>Legs</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Pawn/Humanlike/Apparel/ShirtBasic/ShirtBasic</wornGraphicPath>
+			<layers>
+				<li>OnSkin</li>
+			</layers>
+			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+		</apparel>
+		<colorGenerator Class="ColorGenerator_Options">
+			<options>
+				<li><weight>1</weight><only>(0.77,0.07,0.07)</only></li>
+			</options>
+		</colorGenerator>
+		<comps>
+			<li Class="CompProperties_Colorable" />
+		</comps>
+	</ThingDef>
+
+</Defs>

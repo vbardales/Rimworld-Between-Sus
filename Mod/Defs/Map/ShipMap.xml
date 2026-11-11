@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<MapGeneratorDef>
+		<defName>BS_ShipMap</defName>
+		<genSteps>
+			<li>ElevationFertility</li>
+			<li>Terrain</li>
+			<li>BS_ShipLayout</li>
+			<li>ScenParts</li>
+			<li>Fog</li>
+		</genSteps>
+	</MapGeneratorDef>
+
+	<GenStepDef>
+		<defName>BS_ShipLayout</defName>
+		<order>500</order>
+		<genStep Class="BetweenSus.GenStep_ShipLayout" />
+	</GenStepDef>
+
+</Defs>

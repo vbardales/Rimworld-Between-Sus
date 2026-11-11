@@ -7,6 +7,12 @@
 		<description>You have no special power. Do your tasks, watch the others, vote well.</description>
 		<team>Crewmate</team>
 		<tip>Find the impostors before they find you.</tip>
+		<abilities>
+			<li>
+				<label>Sharp eyes</label>
+				<description>You see every colonist's actions like anyone else. Trust what you observe, not what you are told.</description>
+			</li>
+		</abilities>
 	</BetweenSus.RoleDef>
 
 	<BetweenSus.RoleDef>
@@ -15,6 +21,16 @@
 		<description>You are an impostor. Eliminate the crew without being caught.</description>
 		<team>Impostor</team>
 		<tip>Stay close to your fellow impostors, but do not look like it.</tip>
+		<abilities>
+			<li>
+				<label>Cover</label>
+				<description>You look like any crewmate. Blend in: repair, work, and follow the crew.</description>
+			</li>
+			<li>
+				<label>Kill in the dark</label>
+				<description>Strike only when nobody can see you, and when no camera is on the room.</description>
+			</li>
+		</abilities>
 	</BetweenSus.RoleDef>
 
 </Defs>

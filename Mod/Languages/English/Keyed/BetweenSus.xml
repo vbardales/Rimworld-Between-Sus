@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<BS_Refuses>Refuses</BS_Refuses>
+	<BS_TeamCrewmate>crewmate</BS_TeamCrewmate>
+	<BS_TeamImpostor>impostor</BS_TeamImpostor>
+	<BS_TeamSubtitleCrewmate>There are {0} impostors among us</BS_TeamSubtitleCrewmate>
+	<BS_TeamSubtitleImpostor>Eliminate the crew without being caught</BS_TeamSubtitleImpostor>
+	<BS_Continue>Continue</BS_Continue>
+	<BS_Understood>Understood</BS_Understood>
+</LanguageData>

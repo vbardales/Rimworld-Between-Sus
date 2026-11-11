@@ -6,7 +6,7 @@ Requested by Alexandre. Social-deduction mod for RimWorld 1.6 (C#, Harmony), ins
 
 - Folder `BetweenSus/`: `Source/` (net48, Krafs.Rimworld.Ref 1.6.4871, Lib.Harmony 2.4.3), `Mod/` (About, Assemblies, Defs).
 - packageId `nelim.betweensus`. Build: `dotnet build -c Release` in `Source/`, output in `Mod/Assemblies/`, intermediates in `.build/`.
-- Done: `Team` enum, `RoleDef` (+ `RoleDefOf`), `GameComponent_Roles` (assign, role of, teammates, save/load), `BS_Crewmate_Innocent`, `BS_Impostor_Impostor`.
+- Done (2026-11-11): Team, RoleDef with abilities, GameComponent_Roles (main pawn, assignment, refusal chance), two roles, two reveal windows, ScenPart_AssignRoles, BS_CrewSuit with Palette, order refusal patch, ship layout (17 rooms) with GenStep_ShipLayout and Patch_ForceShipMap, scenario BS_BetweenSus. Built, not yet loaded in the game.
 
 ## Roles
 

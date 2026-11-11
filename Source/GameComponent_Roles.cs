@@ -2,19 +2,26 @@ using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using Verse;
+using Verse.AI;
 
 namespace BetweenSus
 {
     /// <summary>
-    /// Source de verite des roles. Un pion = un petit role, l'equipe en decoule.
+    /// Source of truth for roles. One pawn = one small role, the team follows from it.
     /// </summary>
     public class GameComponent_Roles : GameComponent
     {
         private Dictionary<Pawn, RoleDef> roles = new Dictionary<Pawn, RoleDef>();
+        private Pawn mainPawn;
         private List<Pawn> keysWorkingList;
         private List<RoleDef> valuesWorkingList;
 
         public GameComponent_Roles(Game game) { }
+
+        public static GameComponent_Roles Instance => Current.Game?.GetComponent<GameComponent_Roles>();
+
+        public Pawn MainPawn => mainPawn;
+        public bool Active => mainPawn != null && roles.Count > 0;
 
         public RoleDef RoleOf(Pawn pawn) =>
             pawn != null && roles.TryGetValue(pawn, out var role) ? role : null;
@@ -30,7 +37,9 @@ namespace BetweenSus
                     yield return kv.Key;
         }
 
-        /// <summary>Tire impostorCount imposteurs au hasard, le reste est coequipier.</summary>
+        public int ImpostorCount => roles.Values.Count(r => r.team == Team.Impostor);
+
+        /// <summary>Draws impostorCount impostors at random, the rest are crewmates. The main pawn is drawn at random.</summary>
         public void Assign(IList<Pawn> pawns, int impostorCount)
         {
             roles.Clear();
@@ -41,10 +50,34 @@ namespace BetweenSus
                     ? RoleDefOf.BS_Impostor_Impostor
                     : RoleDefOf.BS_Crewmate_Innocent;
             }
+            mainPawn = pawns.RandomElement();
+        }
+
+        /// <summary>Chance that a pawn refuses a player order. The main pawn never refuses.</summary>
+        public float RefusalChance(Pawn pawn, Job job)
+        {
+            if (!Active || pawn == mainPawn) return 0f;
+            var role = RoleOf(pawn);
+            if (role == null) return 0f;
+
+            if (role.team == Team.Impostor)
+            {
+                // Cover: obeys almost always, except an order that would expose it.
+                if (job?.targetA.Thing is Pawn target && target != pawn && TeamOf(target) == Team.Impostor
+                    && (job.def == JobDefOf.AttackMelee || job.def == JobDefOf.AttackStatic))
+                    return 0.9f;
+                return 0.02f;
+            }
+
+            float mood = pawn.needs?.mood?.CurLevelPercentage ?? 0.5f;
+            float chance = 0.04f;
+            if (mood < 0.35f) chance += 0.2f * (0.35f - mood) / 0.35f;
+            return chance;
         }
 
         public override void ExposeData()
         {
+            Scribe_References.Look(ref mainPawn, "mainPawn");
             Scribe_Collections.Look(ref roles, "roles", LookMode.Reference, LookMode.Def,
                 ref keysWorkingList, ref valuesWorkingList);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)

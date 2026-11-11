@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ScenPartDef>
+		<defName>BS_AssignRoles</defName>
+		<label>assign roles</label>
+		<scenPartClass>BetweenSus.ScenPart_AssignRoles</scenPartClass>
+		<category>Fixed</category>
+		<summaryPriority>500</summaryPriority>
+	</ScenPartDef>
+
+	<ScenarioDef ParentName="ScenarioBase">
+		<defName>BS_BetweenSus</defName>
+		<label>Between Sus</label>
+		<description>You wake up aboard a spaceship with a crew of colonists. Some of them are impostors. You know your own role, and only yours. Command everyone, but be careful: they may not listen.</description>
+		<scenario>
+			<summary>A crew on a ship, and impostors hiding among them.</summary>
+			<parts>
+
+				<li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+					<def>ConfigPage_ConfigureStartingPawns</def>
+					<pawnCount>8</pawnCount>
+					<pawnChoiceCount>10</pawnChoiceCount>
+				</li>
+
+				<li Class="ScenPart_PlayerPawnsArriveMethod">
+					<def>PlayerPawnsArriveMethod</def>
+					<method>Standing</method>
+					<visible>false</visible>
+				</li>
+
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>MealSurvivalPack</thingDef>
+					<count>40</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>MedicineIndustrial</thingDef>
+					<count>20</count>
+				</li>
+
+				<li Class="BetweenSus.ScenPart_AssignRoles">
+					<def>BS_AssignRoles</def>
+					<impostorCount>2</impostorCount>
+				</li>
+
+			</parts>
+		</scenario>
+	</ScenarioDef>
+
+</Defs>
