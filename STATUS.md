@@ -18,6 +18,7 @@ workshop: none
 published: no
 tested_on: never
 remaining:
+  - "2026-11-11: owner decision: develop every feature first, validate by gallery captures instead of Pickle tests first; rest of the pitch (roles, vote, win conditions) waits for Alexandre"
   - "2026-11-11: feature: dedicated models for engines, reactors, consoles and tanks (placeholders: vanilla heaters, batteries, comms consoles), space outside the hull instead of ground, power network for the vanilla machines"
   - "2026-11-11: feature: vote started by the emergency button (the button is placed, inert), working cameras in the security room, map table in admin"
   - "2026-11-11: feature: per-impostor cover score and killing rules; kills only when unobserved"
