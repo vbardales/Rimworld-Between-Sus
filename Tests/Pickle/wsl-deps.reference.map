@@ -1,6 +1,8 @@
 # Pass for the reference captures: a new colony on the Between Sus scenario.
-# The PickleTools bundle (ClearScreen and ScreenshotMode are in it) is activated by the staging itself: no line for it, no standalone copy.
+# The PickleTools bundle (ClearScreen and ScreenshotMode are in it) is staged by the line below; no standalone ClearScreen or ScreenshotMode (the bundle is incompatibleWith them).
+# Check-Steps reports NOT STAGED for those two: false positive, it has no bundle concept (NPT, 2026-11-12).
 # Harmony, the hard dependency of the mod under test (Workshop 2009463077).
 brrainz.harmony                      2009463077
 nelim.pickletools.newcolony          path:PickleTools/NewColony/Mod
 nelim.pickletools.camerazoom         path:PickleTools/CameraZoom/Mod
+nelim.pickletools                    path:PickleTools/Tests/Pickle/StandaloneBase/Mod
