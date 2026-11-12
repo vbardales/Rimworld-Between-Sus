@@ -19,7 +19,7 @@ workshop_required_items: n/a, not released yet
 published: no
 tested_on: never
 remaining:
-  - "2026-11-11: ticket 20261112-002350-786-1e9d (Pickle, commit 5618076, 01-reference-capture, evidence Tests/Pickle/Inbox/reference-capture) is queued: the first one (90b2) failed in staging, incompatible standalone clearscreen and screenshotmode with the bundle. The TM does not know this session (REGISTER never delivered): after the clear, check Submit-PickleRun.ps1 -List and .pickle-state/rimworld-ticket-dispatcher/results/<id>.json by hand. If it fails on Undefined step for ScreenshotMode, ask PiT (Check-Steps wants @requires:nelim.pickletools.screenshotmode, the bundle already holds it)"
+  - "2026-11-12: ticket 20261112-002350-786-1e9d (01-reference-capture, commit 5618076) came back exit 0 but its only scenario was SKIPPED (0 steps, 0 ms, no capture); run read and deleted from Inbox (refused). Next: find why the scenario has no steps (Check-Steps, @requires:nelim.pickletools.screenshotmode), then refile a ticket"
   - "2026-11-12: art plan: the ghost layers (Art/Work/ghost-layers.webp) are not wired and must be redone from the real colonist capture of that ticket; crew suit and ejection animation (engine fuel) wait for the same capture; role icons, stations, button and consoles are wired"
   - "2026-11-12: prepublication 0.1.0 item exists (PublishedFileId 3838119558, committed at the owner order)"
   - "2026-11-11: unverified: at localize, translation_fr is not done yet; /review-translation is mandatory before the owner's French review (AUDIT.md 6.g, TM rule of 2026-11-11), translation_fr goes through pending_review"
