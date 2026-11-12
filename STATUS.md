@@ -19,7 +19,7 @@ workshop_required_items: n/a, not released yet
 published: no
 tested_on: never
 remaining:
-  - "2026-11-12: ticket 20261112-002350-786-1e9d (01-reference-capture, commit 5618076) came back exit 0 but its only scenario was SKIPPED (0 steps, 0 ms, no capture); run read and deleted from Inbox (refused). Next: find why the scenario has no steps (Check-Steps, @requires:nelim.pickletools.screenshotmode), then refile a ticket"
+  - "2026-11-12: ticket 20261112-002350-786-1e9d (01-reference-capture, commit 5618076) came back exit 0 but its only scenario was SKIPPED (0 steps, 0 ms, no capture); run read and deleted from Inbox (refused). Likely cause (NPT, unconfirmed): @requires:nelim.pickletools unmet because the map did not stage the bundle; refiled as ticket 20261112-113449-010-514d with the bundle line in wsl-deps.reference.map (Check-Steps NOT STAGED for clearscreen/screenshotmode is a false positive, no standalone copy, the bundle is incompatibleWith them). Read its summary.json at RUN_DONE"
   - "2026-11-12: art plan: the ghost layers (Art/Work/ghost-layers.webp) are not wired and must be redone from the real colonist capture of that ticket; crew suit and ejection animation (engine fuel) wait for the same capture; role icons, stations, button and consoles are wired"
   - "2026-11-12: prepublication 0.1.0 item exists (PublishedFileId 3838119558, committed at the owner order)"
   - "2026-11-11: unverified: at localize, translation_fr is not done yet; /review-translation is mandatory before the owner's French review (AUDIT.md 6.g, TM rule of 2026-11-11), translation_fr goes through pending_review"
