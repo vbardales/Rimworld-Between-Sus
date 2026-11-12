@@ -29,7 +29,7 @@ remaining:
   - "2026-11-11: unverified: tasks, sabotage, kill, meeting, vote, win conditions and the 11 roles are built but never run in RimWorld; Harmony targets Pawn.GetGizmos, Pawn_JobTracker.TryTakeOrderedJob and MapGenerator.GenerateMap unchecked in game"
   - "2026-11-11: owner decision: develop every feature first, then Pickle tests produce the captures; rest of the pitch waits for Alexandre, design choices made meanwhile are in Docs/DESIGN.md and can change"
 updated: 2026-11-12
-protocols_read_sha: 0ec00941d9922269b308d0234a9062b70e31a34e
+protocols_read_sha: 90239b994a52093920b440fb20d0b67c552a9693
 ---
 
 # Between Sus: status
