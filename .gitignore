@@ -8,3 +8,6 @@ Source/bin/
 Art/.render/
 .build/
 desktop.ini
+Tests/Pickle/Inbox/
+Tests/Pickle/Parked/
+Tests/Pickle/Evidence/
