@@ -12,7 +12,7 @@
 	<ScenarioDef ParentName="ScenarioBase">
 		<defName>BS_BetweenSus</defName>
 		<label>Between Sus</label>
-		<description>You wake up aboard a spaceship with a crew of colonists. Some of them are impostors. You know your own role, and only yours. Command everyone, but be careful: they may not listen.</description>
+		<description>You wake up aboard a spaceship with a crew of colonists. Some of them are impostors. You know your own role, and only yours. Command them all, but be careful: they may not listen.</description>
 		<scenario>
 			<summary>A crew on a ship, and impostors hiding among them.</summary>
 			<parts>

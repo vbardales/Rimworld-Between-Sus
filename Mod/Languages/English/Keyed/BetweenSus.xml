@@ -12,9 +12,9 @@
 	<BS_CallMeetingDesc>Calls the whole crew to the cafeteria for a vote.</BS_CallMeetingDesc>
 	<BS_MeetingCooldown>The button is not ready yet.</BS_MeetingCooldown>
 	<BS_Cameras>Cameras</BS_Cameras>
-	<BS_CamerasDesc>Shows each room with the colonists inside.</BS_CamerasDesc>
+	<BS_CamerasDesc>Shows each room and the colonists inside.</BS_CamerasDesc>
 	<BS_ShipMap>Ship map</BS_ShipMap>
-	<BS_ShipMapDesc>Shows each room with how many colonists are inside.</BS_ShipMapDesc>
+	<BS_ShipMapDesc>Shows the ship map, with the number of colonists in each room.</BS_ShipMapDesc>
 	<BS_NobodyAround>Nobody is in any room.</BS_NobodyAround>
 
 	<BS_TaskProgress>Task done ({0} of {1}).</BS_TaskProgress>
@@ -38,8 +38,8 @@
 	<BS_TrackGizmo>Track</BS_TrackGizmo>
 	<BS_TrackDesc>Follows one colonist for a day.</BS_TrackDesc>
 	<BS_Tracking>You are tracking {0}.</BS_Tracking>
-	<BS_TrackReport>{0} is in: {1}.</BS_TrackReport>
-	<BS_NecroHears>You hear the body of {0}, in: {1}.</BS_NecroHears>
+	<BS_TrackReport>{0} is in {1}.</BS_TrackReport>
+	<BS_NecroHears>You hear the body of {0} in {1}.</BS_NecroHears>
 	<BS_ShapeshiftGizmo>Shapeshift</BS_ShapeshiftGizmo>
 	<BS_ShapeshiftDesc>Takes the suit colour of another colonist for a day.</BS_ShapeshiftDesc>
 	<BS_Shapeshifted>You look like {0} now.</BS_Shapeshifted>
@@ -70,7 +70,7 @@
 	<BS_KillBlocked>A guardian shielded the target: the kill failed.</BS_KillBlocked>
 	<BS_EvidenceReady>The crew has enough evidence against {0}. They can be eliminated.</BS_EvidenceReady>
 	<BS_EjectVote>{0} was ejected by vote</BS_EjectVote>
-	<BS_EjectEvidence>{0} was eliminated on evidence</BS_EjectEvidence>
+	<BS_EjectEvidence>{0} was eliminated based on the evidence.</BS_EjectEvidence>
 	<BS_BecameGuardianGhost>You are a guardian ghost now. You can do tasks and shield one colonist from the next kill.</BS_BecameGuardianGhost>
 	<BS_BecameTaskGhost>You are a ghost now. You can only do tasks.</BS_BecameTaskGhost>
 	<BS_Protecting>You shield {0} from the next kill.</BS_Protecting>

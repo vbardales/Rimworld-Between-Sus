@@ -47,7 +47,7 @@
 	<ThingDef ParentName="BS_PropBase">
 		<defName>BS_TaskStation</defName>
 		<label>task station</label>
-		<description>A ship station. A crewmate who works here completes a task. Select a colonist and prioritise the work "Tasks".</description>
+		<description>A station aboard the ship. A crewmate who works here completes a task. Select a colonist and prioritise the "Tasks" work.</description>
 		<thingClass>BetweenSus.Building_Station</thingClass>
 		<graphicData>
 			<texPath>BetweenSus/Props/Station_Task</texPath>
@@ -86,7 +86,7 @@
 	<ThingDef ParentName="BS_PropBase">
 		<defName>BS_SecurityConsole</defName>
 		<label>security console</label>
-		<description>Shows the cameras: each room with the colonists inside.</description>
+		<description>Shows each room and the colonists inside.</description>
 		<thingClass>BetweenSus.Building_ShipConsole</thingClass>
 		<graphicData>
 			<texPath>BetweenSus/Props/SecurityConsole</texPath>
@@ -99,7 +99,7 @@
 	<ThingDef ParentName="BS_PropBase">
 		<defName>BS_AdminConsole</defName>
 		<label>admin console</label>
-		<description>Shows the ship map: each room with how many colonists are inside.</description>
+		<description>Shows the ship map, with the number of colonists in each room.</description>
 		<thingClass>BetweenSus.Building_ShipConsole</thingClass>
 		<graphicData>
 			<texPath>BetweenSus/Props/AdminConsole</texPath>
