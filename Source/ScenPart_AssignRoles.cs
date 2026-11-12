@@ -29,7 +29,9 @@ namespace BetweenSus
         {
             var tasks = DefDatabase<WorkTypeDef>.GetNamedSilentFail("BS_Tasks");
             if (tasks != null)
-                foreach (var p in pawns) p.workSettings?.SetPriority(tasks, 1);
+                foreach (var p in pawns)
+                    if (p.workSettings != null && !p.WorkTypeIsDisabled(tasks))
+                        p.workSettings.SetPriority(tasks, 1);
             GameComponent_Ship.Instance?.BeginGame();
         }
 
