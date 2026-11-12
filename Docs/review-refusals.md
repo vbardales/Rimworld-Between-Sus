@@ -10,3 +10,4 @@ Every ChatGPT proposal refused or postponed, with the reason.
 | 2026-11-12 | `BS_SabotageText` | Fix "Repair the stations in: {0}" | Postponed: role of `{0}` to confirm in game. |
 | 2026-11-12 | Proper noun `BS_BetweenSus.label` | French title "Entre les suspects" | Owner's call (Virginie), no French form chosen yet. |
 | 2026-11-12 | Proper noun `Harmony` | Keep or validate | Kept: dependency name, not translated. |
+| 2026-11-12 | Proper nouns `Between Sus`, `Harmony` (second review) | French form of the title; keep Harmony | Title: owner call pending. Harmony kept. No upstream PR: upstream_mod_remotes is N/A (original work). |

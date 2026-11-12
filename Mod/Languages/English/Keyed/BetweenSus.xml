@@ -21,7 +21,7 @@
 	<BS_SabotageReactor>Reactor meltdown</BS_SabotageReactor>
 	<BS_SabotageO2>O2 depletion</BS_SabotageO2>
 	<BS_SabotageText>Sabotage! Repair the stations in: {0}. About {1} seconds left.</BS_SabotageText>
-	<BS_SabotageFixed>The sabotage is fixed.</BS_SabotageFixed>
+	<BS_SabotageFixed>The sabotage has been repaired.</BS_SabotageFixed>
 	<BS_SabotageNotReady>No sabotage possible right now.</BS_SabotageNotReady>
 
 	<BS_Kill>Kill</BS_Kill>
