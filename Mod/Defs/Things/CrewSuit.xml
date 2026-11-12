@@ -36,7 +36,7 @@
 			</options>
 		</colorGenerator>
 		<comps>
-			<li Class="CompProperties_Colorable" />
+			<li><compClass>CompColorable</compClass></li>
 		</comps>
 	</ThingDef>
 
