@@ -39,7 +39,7 @@ remaining:
   - "2026-11-13: French /review-translation page 1 of 1 read: 4 French fixes applied, 0 refused, no proper noun to decide; waiting for Virginie French review (translation_fr stays partial until she validates)"
   - "2026-11-13: second French /review-translation read: 0 applied, 1 refused (BS_Crewmate_Innocent.tip, masculine-only agreement), no proper noun to decide; waiting for Virginie French review"
 updated: 2026-11-13
-protocols_read_sha: 9366fbbe0241d0708bdc7b7809b94a5099db5621
+protocols_read_sha: 5af4c2c14c4c9dba0b099c7dfe251e0f9c34ff1f
 ---
 
 # Between Sus: status
