@@ -5,11 +5,11 @@ repo: Rimworld-Between-Sus
 remote: https://github.com/vbardales/Rimworld-Between-Sus.git
 visibility: public
 detached: yes
-workflow_stage: settings[1.0.0]
+workflow_stage: localize[1.0.0]
 licence: original
 licence_at: "2026-11-11: original work by Nelim (requested by Alexandre), MIT; no third-party code or asset reused, Harmony and Krafs.Rimworld.Ref only as dependencies"
 upstream_mod_remotes: N/A
-settings_audit: unchecked
+settings_audit: not_applicable
 localization: unchecked
 translation_en: unchecked
 translation_fr: unchecked
@@ -19,7 +19,6 @@ workshop_required_items: n/a, not released yet
 published: no
 tested_on: never
 remaining:
-  - "2026-11-12: replay-audit: stage stays settings[1.0.0], sections 1 to 4 fulfilled (25 done, 5 n/a); open 5.a to 5.h: no settings inventory, no decision (settings or none), settings_audit unchecked, no Settings audit section (ledger .replays/BetweenSus-20261112.tsv)"
   - "2026-11-12: ticket 20261112-002350-786-1e9d (01-reference-capture, commit 5618076) came back exit 0 but its only scenario was SKIPPED (0 steps, 0 ms, no capture); run read and deleted from Inbox (refused). 514d (bundle line = StandaloneBase shell, no steps) failed: Undefined step "the screen is clear". f1fb cancelled; NPT: StandaloneBase is a DLL-less stub, the real bundle is PickleTools/Mod. Refiled as ticket 20261112-113834-896-d948 with `nelim.pickletools path:PickleTools/Mod` in wsl-deps.reference.map: the steps loaded, the run CRASHED (launcher exit 134, no report); evidence read and deleted from Inbox (refused). DEFECT, cause in Player.log: Mod/Defs/Things/CrewSuit.xml:39 `<li Class=\"CompProperties_Colorable\" />` is not a type in 1.6 (ArgumentException: Could not find type named CompProperties_Colorable), so BS_CrewSuit never loads and ScenPart_AssignRoles.DressAll (Source) calls ThingMaker.MakeThing with a null def: NullReferenceException in PostGameStart, map generation fails. FIXED in commit (compClass CompColorable), b954 loaded the game but failed: Log.Error "Tried to change priority on disabled worktype BS_Tasks for pawn Prissy" (ScenPart_AssignRoles.Start); fixed with a WorkTypeIsDisabled guard, refiled as ticket 20261112-123810-337-bfa5; TM read the crash as a SectionLayer_Sand fault, but the sand NREs follow the failed map generation"
   - "2026-11-12: ticket 00b0 (reference-capture) GREEN 1/1 (summary.json passed, 21475 ms): game loads, crew in suits visible at 90 percent, two captures (crew-close, ship-cafeteria) kept in Tests/Pickle/Parked/reference-capture-00b0 (git-ignored, on disk only; exit: delete once the ghost layers are redone from them); Player.log has only the 4 harmless 'did not load any content' notices of the test mods; run deleted from Inbox"
   - "2026-11-12: (history) ticket bfa5 came back red: the BS_Tasks error is gone, the camera step failed (\"to fill 90 percent the camera root size should be 8.333334; it reads 11\"), the game bounds the camera root size at 11; NPT widened the CameraZoom range (PickleTools/CameraZoom/Mod), the feature stays at 90 percent; refiled as ticket 20261112-140657-875-00b0 (commit 342a81a), waiting for RUN_DONE; if it still reads 11, tell NPT the read-back; evidence read and deleted from Inbox (refused)"
@@ -38,9 +37,19 @@ remaining:
   - "2026-11-13: fourth /review-translation: BS_EmergencyButton description fixed (of to in the cafeteria); title decided (Entre Sus(pects)), recorded in Docs/review-names.md"
   - "2026-11-13: English text review validated by Virginie (five ChatGPT passes, last one with no correction); translation_en and translation_fr stay unchecked until the localize audit and the French table"
 updated: 2026-11-13
-protocols_read_sha: 2aa9ba8498383385ae7fc0df815dc67b78732afa
+protocols_read_sha: a5c2b748de9f1e3275c45ba2877929b21ca94269
 ---
 
 # Between Sus: status
 
 Current state only: the front matter above is the source of truth. Design decisions live in `Docs/DESIGN.md`.
+
+## Settings audit
+
+Date 2026-11-13, revision 784c819+. Result: `not_applicable`, no settings for 1.0.0.
+
+- **Inventory (5.a):** tunable values in `Source/GameComponent_Ship.cs`: `KillCooldown` 15000, `SabotageCooldown` 30000, `MeetingCooldown` 8000, `EvidenceNeeded` 3; `ScenPart_AssignRoles.impostorCount` (default 2, no editor UI, capped at a quarter of the colonists). No inherited setting, no optional integration.
+- **Decision (5.b):** none. These are balance constants of a design that still waits for Alexandre's pitch (`Docs/DESIGN.md`); exposing them now would freeze guesses. Lobby options such as the number of impostors are in `Docs/BACKLOG.md`. Revisit when the pitch lands.
+- **Verified (5.c, 5.d):** no `Mod` subclass, no `ModSettings`, no `DoSettingsWindowContents` in `Source/`; no `MainButtonDef` in `Mod/Defs`: no empty settings page and no shortcut.
+- **5.e to 5.f:** not applicable, no control exists.
+- **Check-SettingsContract.ps1:** reports "no MainButtonDef" until `not_applicable` is recorded, as it says.
