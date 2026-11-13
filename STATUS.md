@@ -34,7 +34,8 @@ remaining:
   - "2026-11-12: Ecosystem: none found, scan 2026-11-12"
   - "2026-11-12: /review-translation page 1 of 1 done (ChatGPT answer read): 8 English text fixes applied (scenario, task station, consoles, cameras, ejection, track and necro report); 6 postponed or refused in Docs/review-refusals.md; waiting for Virginie on proper nouns (title French form, Harmony); translation_fr stays pending until the French table exists"
   - "2026-11-12: second /review-translation (after the fixes): one text fix applied (BS_SabotageFixed), nothing else; title French form still waits for Virginie"
-updated: 2026-11-12
+  - "2026-11-13: third /review-translation: BS_EvidenceReady fixed (They to {0}); title French form still waits for Virginie, TITLE? sent to Audit"
+updated: 2026-11-13
 protocols_read_sha: 2aa9ba8498383385ae7fc0df815dc67b78732afa
 ---
 

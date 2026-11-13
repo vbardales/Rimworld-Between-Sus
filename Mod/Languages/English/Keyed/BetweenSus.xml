@@ -68,7 +68,7 @@
 	<BS_SabotageDoors>Door lockdown</BS_SabotageDoors>
 	<BS_SabotageDoorsText>Every door is locked for a short while. The emergency button is off and bodies cannot be reported.</BS_SabotageDoorsText>
 	<BS_KillBlocked>A guardian shielded the target: the kill failed.</BS_KillBlocked>
-	<BS_EvidenceReady>The crew has enough evidence against {0}. They can be eliminated.</BS_EvidenceReady>
+	<BS_EvidenceReady>The crew has enough evidence against {0}. {0} can be eliminated.</BS_EvidenceReady>
 	<BS_EjectVote>{0} was ejected by vote</BS_EjectVote>
 	<BS_EjectEvidence>{0} was eliminated based on the evidence.</BS_EjectEvidence>
 	<BS_BecameGuardianGhost>You are a guardian ghost now. You can do tasks and shield one colonist from the next kill.</BS_BecameGuardianGhost>
