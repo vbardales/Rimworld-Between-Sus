@@ -34,7 +34,7 @@
 	<ThingDef ParentName="BS_PropBase">
 		<defName>BS_EmergencyButton</defName>
 		<label>emergency button</label>
-		<description>The big red button of the cafeteria. Select it to call the whole crew to a meeting.</description>
+		<description>The big red button in the cafeteria. Select it to call the whole crew to a meeting.</description>
 		<thingClass>BetweenSus.Building_EmergencyButton</thingClass>
 		<graphicData>
 			<texPath>BetweenSus/Props/EmergencyButton</texPath>
