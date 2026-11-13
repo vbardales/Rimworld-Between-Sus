@@ -31,7 +31,7 @@ remaining:
   - "2026-11-11: unverified: Alexandre's rules (evidence, door sabotage, ejection, ghosts, vote argument) are built but never run in RimWorld; the ghost has no distinct look yet"
   - "2026-11-11: unverified: tasks, sabotage, kill, meeting, vote, win conditions and the 11 roles are built but never run in RimWorld; Harmony targets Pawn.GetGizmos, Pawn_JobTracker.TryTakeOrderedJob and MapGenerator.GenerateMap unchecked in game"
   - "2026-11-11: owner decision: develop every feature first, then Pickle tests produce the captures; rest of the pitch waits for Alexandre, design choices made meanwhile are in Docs/DESIGN.md and can change"
-  - "2026-11-12: Ecosystem: none found, scan 2026-11-12"
+  - "2026-11-13: Ecosystem: local scan of 2026-11-12 found nothing but is not enough; ECOSYSTEM? sent to PiI (Steam search: duplicates and replacements, no original mod), waiting for its one-line answer, then copy the summary in an Ecosystem section"
   - "2026-11-12: /review-translation page 1 of 1 done (ChatGPT answer read): 8 English text fixes applied (scenario, task station, consoles, cameras, ejection, track and necro report); 6 postponed or refused in Docs/review-refusals.md; waiting for Virginie on proper nouns (title French form, Harmony); translation_fr stays pending until the French table exists"
   - "2026-11-12: second /review-translation (after the fixes): one text fix applied (BS_SabotageFixed), nothing else; title French form still waits for Virginie"
   - "2026-11-13: third /review-translation: BS_EvidenceReady fixed (They to {0}); title French form still waits for Virginie, TITLE? sent to Audit"
