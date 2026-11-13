@@ -5,14 +5,14 @@ repo: Rimworld-Between-Sus
 remote: https://github.com/vbardales/Rimworld-Between-Sus.git
 visibility: public
 detached: yes
-workflow_stage: localize[1.0.0]
+workflow_stage: writeTests[1.0.0]
 licence: original
 licence_at: "2026-11-11: original work by Nelim (requested by Alexandre), MIT; no third-party code or asset reused, Harmony and Krafs.Rimworld.Ref only as dependencies"
 upstream_mod_remotes: N/A
 settings_audit: not_applicable
-localization: partial
-translation_en: partial
-translation_fr: partial
+localization: complete
+translation_en: complete
+translation_fr: complete
 dependencies: declared
 workshop: none
 workshop_required_items: n/a, not released yet
@@ -40,7 +40,7 @@ remaining:
   - "2026-11-13: French /review-translation page 1 of 1 read: 4 French fixes applied, 0 refused, no proper noun to decide; waiting for Virginie French review (translation_fr stays partial until she validates)"
   - "2026-11-13: second French /review-translation read: 0 applied, 1 refused (BS_Crewmate_Innocent.tip, masculine-only agreement), no proper noun to decide; waiting for Virginie French review"
 updated: 2026-11-13
-protocols_read_sha: a5c2b748de9f1e3275c45ba2877929b21ca94269
+protocols_read_sha: 9366fbbe0241d0708bdc7b7809b94a5099db5621
 ---
 
 # Between Sus: status
@@ -65,4 +65,4 @@ Date 2026-11-13, revision of this commit. Inventory: Keyed (English and French, 
 - **French:** `Mod/Languages/French/Keyed` and `DefInjected` (folders `BetweenSus.RoleDef`, `ThingDef`, `WorkTypeDef`, `WorkGiverDef`, `JobDef`, `ScenarioDef`, `ScenPartDef`). No tu, no vous, no nous: infinitives, nominal and third-person forms. Pawn names arrive as plain strings (no gender available): epicene wording (`Éjection de {0}`, `Élimination de {0} d'après les preuves`). Role labels use `membre d'équipage` plus an apposed noun. Scenario label keeps `Between Sus` (a label).
 - **Checks:** `Check-Translations.ps1 -ModRoot .` PASS (48 texts, 26 nested, 44 Keyed calls); 12 nested injection paths (`abilities.N.*`, `scenario.summary`) are proved by the game rules (numeric segment = list index), not by a script: in-game check at playTests.
 - **Known English defect:** `BS_TeamSubtitleCrewmate` ("There are {0} impostors among us") has no singular form; French avoids it ("Imposteurs à bord : {0}").
-- **Review:** ChatGPT answer read 2026-11-13, 4 fixes applied. Pending: Virginie French review.
+- **Review:** ChatGPT answers read 2026-11-13 (4 French fixes applied, 1 refusal logged). **French reviewed and validated by Virginie, 2026-11-13, revision 95ed2ac, no correction.**
