@@ -36,7 +36,6 @@ remaining:
   - "2026-11-13: third /review-translation: BS_EvidenceReady fixed (They to {0}); title French form still waits for Virginie, TITLE? sent to Audit"
   - "2026-11-13: fourth /review-translation: BS_EmergencyButton description fixed (of to in the cafeteria); title decided (Entre Sus(pects)), recorded in Docs/review-names.md"
   - "2026-11-13: English text review validated by Virginie (five ChatGPT passes, last one with no correction); translation_en and translation_fr stay unchecked until the localize audit and the French table"
-  - "2026-11-13: unverified: Check-SettingsContract.ps1 FAILs (code, no MainButtonDef) by design; way out is a rule in the mod local test script (Tests/Rule-OwnValues.ps1 + row in LOCAL_SCRIPTS.md), done with the test shape conversion (needs the 0.1.0 junction and generated skeleton); Audit asks Virginie whether the script should read settings_audit not_applicable, no script change meanwhile"
 updated: 2026-11-13
 protocols_read_sha: a5c2b748de9f1e3275c45ba2877929b21ca94269
 ---
