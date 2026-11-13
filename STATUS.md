@@ -30,7 +30,6 @@ remaining:
   - "2026-11-11: unverified: Alexandre's rules (evidence, door sabotage, ejection, ghosts, vote argument) are built but never run in RimWorld; the ghost has no distinct look yet"
   - "2026-11-11: unverified: tasks, sabotage, kill, meeting, vote, win conditions and the 11 roles are built but never run in RimWorld; Harmony targets Pawn.GetGizmos, Pawn_JobTracker.TryTakeOrderedJob and MapGenerator.GenerateMap unchecked in game"
   - "2026-11-11: owner decision: develop every feature first, then Pickle tests produce the captures; rest of the pitch waits for Alexandre, design choices made meanwhile are in Docs/DESIGN.md and can change"
-  - "2026-11-13: Ecosystem (PiI, docs/inventory/ecosystem-steam/BetweenSus.md, a5c2b74): no duplicate, no replacement; corpus scan of 25 defNames and 15 labels gave 4 weak hits, 0 shared defName; Steam has only Among Us jokes (Metalhorror skin, potion, two sounds), none with impostor, tasks, meetings or votes; no original mod, so no patch or retexture to play"
   - "2026-11-12: /review-translation page 1 of 1 done (ChatGPT answer read): 8 English text fixes applied (scenario, task station, consoles, cameras, ejection, track and necro report); 6 postponed or refused in Docs/review-refusals.md; waiting for Virginie on proper nouns (title French form, Harmony); translation_fr stays pending until the French table exists"
   - "2026-11-12: second /review-translation (after the fixes): one text fix applied (BS_SabotageFixed), nothing else; title French form still waits for Virginie"
   - "2026-11-13: third /review-translation: BS_EvidenceReady fixed (They to {0}); title French form still waits for Virginie, TITLE? sent to Audit"
@@ -56,6 +55,15 @@ Date 2026-11-13, revision 784c819+. Result: `not_applicable`, no settings for 1.
 - **Verified (5.c, 5.d):** no `Mod` subclass, no `ModSettings`, no `DoSettingsWindowContents` in `Source/`; no `MainButtonDef` in `Mod/Defs`: no empty settings page and no shortcut.
 - **5.e to 5.f:** not applicable, no control exists.
 - **Check-SettingsContract.ps1:** reports "no MainButtonDef" until `not_applicable` is recorded, as it says.
+
+## Ecosystem
+
+Date 2026-11-13. Source: PiI, `docs/inventory/ecosystem-steam/BetweenSus.md` (commit a5c2b74 of the protocols checkout).
+
+- **Result:** no duplicate, no replacement.
+- **Corpus scan:** 25 defNames and 15 labels gave 4 weak hits and 0 shared defName.
+- **Steam:** only Among Us jokes (Metalhorror skin, potion, two sounds); none has impostor, tasks, meetings or votes.
+- **Consequence:** no original mod, so no patch and no retexture to play. Dependency stays Harmony only.
 
 ## Translation audit
 
