@@ -5,7 +5,7 @@ repo: Rimworld-Between-Sus
 remote: https://github.com/vbardales/Rimworld-Between-Sus.git
 visibility: public
 detached: yes
-workflow_stage: writeTests[1.0.0]
+workflow_stage: playTests[1.0.0]
 licence: original
 licence_at: "2026-11-11: original work by Nelim (requested by Alexandre), MIT; no third-party code or asset reused, Harmony and Krafs.Rimworld.Ref only as dependencies"
 upstream_mod_remotes: N/A
@@ -38,8 +38,9 @@ remaining:
   - "2026-11-13: unverified: French and room names in game (raw keys, clipping, RoleDef abilities.N.label injection through [MustTranslate]) wait for playTests; Virginie French review pending after /review-translation"
   - "2026-11-13: French /review-translation page 1 of 1 read: 4 French fixes applied, 0 refused, no proper noun to decide; waiting for Virginie French review (translation_fr stays partial until she validates)"
   - "2026-11-13: second French /review-translation read: 0 applied, 1 refused (BS_Crewmate_Innocent.tip, masculine-only agreement), no proper noun to decide; waiting for Virginie French review"
+  - "2026-11-13: writeTests: TESTING.md has 27 functional scenarios (S01 to S27), none played; Pickle features 02-boot and 03-emergency-button written, not run (first tickets at playTests, one each, -pickle-scenario-timeout=400); Inbox/ created; 5 code risks listed in TESTING.md (evidence gizmo window, shapeshift colour after a save, kill range 2.5 against 2, About text, placeholder art)"
 updated: 2026-11-13
-protocols_read_sha: 5af4c2c14c4c9dba0b099c7dfe251e0f9c34ff1f
+protocols_read_sha: e8e42b5447cc8f1e35b4e82d49d3aa42ff86786b
 ---
 
 # Between Sus: status
@@ -74,3 +75,13 @@ Date 2026-11-13, revision of this commit. Inventory: Keyed (English and French, 
 - **Checks:** `Check-Translations.ps1 -ModRoot .` PASS (48 texts, 26 nested, 44 Keyed calls); 12 nested injection paths (`abilities.N.*`, `scenario.summary`) are proved by the game rules (numeric segment = list index), not by a script: in-game check at playTests.
 - **Known English defect:** `BS_TeamSubtitleCrewmate` ("There are {0} impostors among us") has no singular form; French avoids it ("Imposteurs à bord : {0}").
 - **Review:** ChatGPT answers read 2026-11-13 (4 French fixes applied, 1 refusal logged). **French reviewed and validated by Virginie, 2026-11-13, revision 95ed2ac, no correction.**
+
+## Test audit
+
+Date 2026-11-13, tested revision 6ad143b (Source unchanged since 737fbb2, Mod since f10c3fe, DLL as committed). All run from the protocols root, by hand: the generated `Tests/Test-Mod.ps1` and `.github` wait for the prepublication junction (CI/CD).
+
+- **7.b, rejoués:** `Run-OfflineChecks.ps1 -ModRoot BetweenSus -SourceDirs BetweenSus/Source -ExtraAssemblies BetweenSus/Mod/Assemblies/BetweenSus.dll`: 9 of 10 pass; the one failure is `ModBasics`: `Mod/About/Preview.png is missing` (made at `mountPreview`, accepted); `XmlClasses` skipped (no game type list). `Check-HarmonyContract.ps1 -Hooks Pawn.GetGizmos:,Pawn_JobTracker.TryTakeOrderedJob:Job,MapGenerator.GenerateMap`: exit 0 (8 passed). `Check-Translations.ps1`, `Check-SettingsContract.ps1`: exit 0. `Tests/Rule-OwnValues.ps1`: exit 0 (about, 11 roles, constants, scenario, props, 17 rooms and 21 doors connected, room keys EN and FR); negative copy fails on six injected defects. Declared in `scripts/LOCAL_SCRIPTS.md` (d14760b), not yet validated by Audit.
+- **7.c, XML:** covered by `XmlFields`, `DefRefs`, `TypeRefs`, `ConfigErrors`, `DefInjected`, `Textures` above. No XML patch (0 of 0 operations).
+- **7.d, Pickle:** `Tests/Pickle/Mod/Pickle/Features/` 01-reference-capture (ran green, ticket 00b0), 02-boot and 03-emergency-button (written, not run). `Check-Steps.ps1` and `Check-PickleCompanion.ps1` exit 0; the companion no longer lists `nelim.pickletools` as a dependency (the pass map stages it). Pass map `wsl-deps.suite.map`. No local step: nothing to declare to NPT.
+- **7.e, not applicable:** C# unit tests (`Run-UnitTests.ps1`): every rule runs on live `Pawn`, `Map` and `Find` objects, a console test would prove its own fakes. Kills, sabotages, votes and role abilities stay manual: no Pickle step forces the random role of the main pawn.
+- **7.a:** `TESTING.md`, 27 scenarios with preconditions, actions and expected result; numbers and texts checked against `GameComponent_Ship.cs`, `ShipFurnisher.cs`, `ShipLayout.cs`, `RoleDefs.xml` and `Languages/English/Keyed`. `PUBLICATION.md` does not exist (behaviors taken from `Docs/DESIGN.md`).
