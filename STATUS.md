@@ -39,6 +39,7 @@ remaining:
   - "2026-11-13: French /review-translation page 1 of 1 read: 4 French fixes applied, 0 refused, no proper noun to decide; waiting for Virginie French review (translation_fr stays partial until she validates)"
   - "2026-11-13: second French /review-translation read: 0 applied, 1 refused (BS_Crewmate_Innocent.tip, masculine-only agreement), no proper noun to decide; waiting for Virginie French review"
   - "2026-11-13: writeTests: TESTING.md has 27 functional scenarios (S01 to S27), none played; Pickle features 02-boot and 03-emergency-button written, not run (first tickets at playTests, one each, -pickle-scenario-timeout=400); Inbox/ created; 5 code risks listed in TESTING.md (evidence gizmo window, shapeshift colour after a save, kill range 2.5 against 2, About text, placeholder art)"
+  - "2026-11-13: playTests: tickets ac05 (02-boot) and cb77 (03-emergency-button) filed on 8c3001c, pass map wsl-deps.suite.map, evidence in Tests/Pickle/Inbox/boot and /button; TM wakes the session with RUN_DONE; then read summary.json and junit.xml, triage Inbox"
 updated: 2026-11-13
 protocols_read_sha: e8e42b5447cc8f1e35b4e82d49d3aa42ff86786b
 ---
