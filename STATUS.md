@@ -10,6 +10,7 @@ licence: original
 licence_at: "2026-11-11: original work by Nelim (requested by Alexandre), MIT; no third-party code or asset reused, Harmony and Krafs.Rimworld.Ref only as dependencies"
 upstream_mod_remotes: N/A
 settings_audit: not_applicable
+french_review_pending: true
 localization: partial
 translation_en: partial
 translation_fr: partial
