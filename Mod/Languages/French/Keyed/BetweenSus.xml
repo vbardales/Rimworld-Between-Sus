@@ -20,7 +20,7 @@
 	<BS_TaskProgress>Tâche terminée ({0} sur {1}).</BS_TaskProgress>
 	<BS_SabotageReactor>Fusion du réacteur</BS_SabotageReactor>
 	<BS_SabotageO2>Épuisement de l'O2</BS_SabotageO2>
-	<BS_SabotageText>Sabotage ! Stations à réparer : {0}. Environ {1} secondes restantes.</BS_SabotageText>
+	<BS_SabotageText>Sabotage ! Stations à réparer : {0}. Temps restant : environ {1} s.</BS_SabotageText>
 	<BS_SabotageFixed>Le sabotage a été réparé.</BS_SabotageFixed>
 	<BS_SabotageNotReady>Aucun sabotage n'est possible pour le moment.</BS_SabotageNotReady>
 
@@ -82,7 +82,7 @@
 	<BS_WinOutnumbered>Les imposteurs sont aussi nombreux que l'équipage.</BS_WinOutnumbered>
 	<BS_WinSabotage>Le sabotage n'a pas été réparé à temps.</BS_WinSabotage>
 	<BS_SabotageDoors>Verrouillage des portes</BS_SabotageDoors>
-	<BS_SabotageDoorsText>Toutes les portes sont verrouillées pour un moment. Le bouton d'urgence est désactivé et les corps ne peuvent pas être signalés.</BS_SabotageDoorsText>
+	<BS_SabotageDoorsText>Toutes les portes sont verrouillées pendant un court moment. Le bouton d'urgence est désactivé et les corps ne peuvent pas être signalés.</BS_SabotageDoorsText>
 	<BS_KillBlocked>Un gardien a protégé la cible : le meurtre a échoué.</BS_KillBlocked>
 	<BS_EvidenceReady>L'équipage a assez de preuves contre {0}. Élimination de {0} possible.</BS_EvidenceReady>
 	<BS_EjectVote>Éjection de {0} par vote</BS_EjectVote>

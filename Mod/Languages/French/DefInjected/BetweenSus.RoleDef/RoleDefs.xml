@@ -63,8 +63,8 @@
 	<BS_Impostor_Ninja.abilities.0.description>Le délai entre deux meurtres est divisé par deux.</BS_Impostor_Ninja.abilities.0.description>
 
 	<BS_Impostor_Pro.label>imposteur pro</BS_Impostor_Pro.label>
-	<BS_Impostor_Pro.description>A déjà fait cela auparavant.</BS_Impostor_Pro.description>
+	<BS_Impostor_Pro.description>A déjà fait cela.</BS_Impostor_Pro.description>
 	<BS_Impostor_Pro.tip>Doser l'effort : plus d'actions possibles, donc un équipage plus attentif.</BS_Impostor_Pro.tip>
 	<BS_Impostor_Pro.abilities.0.label>Professionnel</BS_Impostor_Pro.abilities.0.label>
-	<BS_Impostor_Pro.abilities.0.description>Le délai entre deux meurtres vaut le quart du normal, et les sabotages laissent plus de temps à l'équipage, donc ils paraissent moins urgents.</BS_Impostor_Pro.abilities.0.description>
+	<BS_Impostor_Pro.abilities.0.description>Le délai entre deux meurtres correspond au quart du délai normal, et les sabotages laissent plus de temps à l'équipage, donc ils paraissent moins urgents.</BS_Impostor_Pro.abilities.0.description>
 </LanguageData>
