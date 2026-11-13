@@ -28,6 +28,7 @@ Two teams (big roles): Crewmate, Impostor. A small role is the post AND the func
 - The player has a main pawn (`mainPawn`) and knows only its role. The player commands every other pawn as usual, cannot see their roles, and they may refuse an order (floating text, no reason shown).
 - Crewmate: refuses rarely, more when the mood is low. Impostor: keeps its cover, obeys, refuses only an order that would expose it (attacking a fellow impostor).
 - The main pawn never refuses. Its role gizmos appear on it only.
+- Madness crises (Alexandre, 2026-11-13): they hit every pawn, main pawn included, and are driven by mood (low mood triggers them). A crisis makes the pawn hit the walls. Open, still unanswered: threshold and duration, real damage or visual only, whether a crisis exposes an impostor or counts as evidence, whether a crisis interrupts a meeting, a vote or a task.
 
 ## Gameplay (Alexandre's answers, 2026-11-11; the rest are my defaults and can change)
 
