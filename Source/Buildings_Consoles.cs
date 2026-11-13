@@ -59,7 +59,7 @@ namespace BetweenSus
                     .Where(p => ship.RoomName(p.Position) == room.Name).ToList();
                 if (inside.Count == 0) continue;
                 string who = names ? string.Join(", ", inside.Select(p => p.LabelShort)) : inside.Count.ToString();
-                lines.Add(GenText.SplitCamelCase(room.Name) + ": " + who);
+                lines.Add("BS_RoomLine".Translate(room.Label, who).ToString());
             }
             return lines.Count == 0 ? "BS_NobodyAround".Translate().ToString() : string.Join("\n", lines);
         }

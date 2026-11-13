@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<BS_Tasks.labelShort>tâches</BS_Tasks.labelShort>
+	<BS_Tasks.pawnLabel>Personnel de bord</BS_Tasks.pawnLabel>
+	<BS_Tasks.gerundLabel>faire les tâches du vaisseau</BS_Tasks.gerundLabel>
+	<BS_Tasks.description>Travailler aux stations de tâches et de réparation du vaisseau.</BS_Tasks.description>
+	<BS_Tasks.verb>Faire les tâches du vaisseau</BS_Tasks.verb>
+</LanguageData>

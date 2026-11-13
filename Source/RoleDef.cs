@@ -7,8 +7,8 @@ namespace BetweenSus
 {
     public class RoleAbility
     {
-        public string label;
-        public string description;
+        [MustTranslate] public string label;
+        [MustTranslate] public string description;
     }
 
     /// <summary>
@@ -17,7 +17,7 @@ namespace BetweenSus
     public class RoleDef : Def
     {
         public Team team;
-        public string tip;
+        [MustTranslate] public string tip;
         public float weight = 1f;
 
         private Texture2D icon;

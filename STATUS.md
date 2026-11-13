@@ -10,9 +10,9 @@ licence: original
 licence_at: "2026-11-11: original work by Nelim (requested by Alexandre), MIT; no third-party code or asset reused, Harmony and Krafs.Rimworld.Ref only as dependencies"
 upstream_mod_remotes: N/A
 settings_audit: not_applicable
-localization: unchecked
-translation_en: unchecked
-translation_fr: unchecked
+localization: partial
+translation_en: partial
+translation_fr: partial
 dependencies: declared
 workshop: none
 workshop_required_items: n/a, not released yet
@@ -36,6 +36,7 @@ remaining:
   - "2026-11-13: third /review-translation: BS_EvidenceReady fixed (They to {0}); title French form still waits for Virginie, TITLE? sent to Audit"
   - "2026-11-13: fourth /review-translation: BS_EmergencyButton description fixed (of to in the cafeteria); title decided (Entre Sus(pects)), recorded in Docs/review-names.md"
   - "2026-11-13: English text review validated by Virginie (five ChatGPT passes, last one with no correction); translation_en and translation_fr stay unchecked until the localize audit and the French table"
+  - "2026-11-13: unverified: French and room names in game (raw keys, clipping, RoleDef abilities.N.label injection through [MustTranslate]) wait for playTests; Virginie French review pending after /review-translation"
 updated: 2026-11-13
 protocols_read_sha: a5c2b748de9f1e3275c45ba2877929b21ca94269
 ---
@@ -53,3 +54,13 @@ Date 2026-11-13, revision 784c819+. Result: `not_applicable`, no settings for 1.
 - **Verified (5.c, 5.d):** no `Mod` subclass, no `ModSettings`, no `DoSettingsWindowContents` in `Source/`; no `MainButtonDef` in `Mod/Defs`: no empty settings page and no shortcut.
 - **5.e to 5.f:** not applicable, no control exists.
 - **Check-SettingsContract.ps1:** reports "no MainButtonDef" until `not_applicable` is recorded, as it says.
+
+## Translation audit
+
+Date 2026-11-13, revision of this commit. Inventory: Keyed (English and French, 85 keys incl. 17 room names), Defs (RoleDef 11 roles with tip and abilities, ThingDef 8, WorkTypeDef, WorkGiverDef, JobDef, ScenarioDef, ScenPartDef) from `Mod/Defs` and `Source`.
+
+- **Code fixes:** room names were English identifiers split by `SplitCamelCase` (hardcoded); now `BS_Room_<Name>` keys (`ShipLayout.Room.Label`) and `BS_RoomLine` for the console lines. `RoleDef.tip` and `RoleAbility.label/description` carry `[MustTranslate]` so DefInjected reaches them. Two unused keys removed (`BS_WinTasks`, `BS_Ejected`).
+- **French:** `Mod/Languages/French/Keyed` and `DefInjected` (folders `BetweenSus.RoleDef`, `ThingDef`, `WorkTypeDef`, `WorkGiverDef`, `JobDef`, `ScenarioDef`, `ScenPartDef`). No tu, no vous, no nous: infinitives, nominal and third-person forms. Pawn names arrive as plain strings (no gender available): epicene wording (`Éjection de {0}`, `Élimination de {0} d'après les preuves`). Role labels use `membre d'équipage` plus an apposed noun. Scenario label keeps `Between Sus` (a label).
+- **Checks:** `Check-Translations.ps1 -ModRoot .` PASS (48 texts, 26 nested, 44 Keyed calls); 12 nested injection paths (`abilities.N.*`, `scenario.summary`) are proved by the game rules (numeric segment = list index), not by a script: in-game check at playTests.
+- **Known English defect:** `BS_TeamSubtitleCrewmate` ("There are {0} impostors among us") has no singular form; French avoids it ("Imposteurs à bord : {0}").
+- **Pending:** `/review-translation`, then Virginie's French review.

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<BS_Refuses>Refuse</BS_Refuses>
+	<BS_TeamCrewmate>membre d'équipage</BS_TeamCrewmate>
+	<BS_TeamImpostor>imposteur</BS_TeamImpostor>
+	<BS_TeamSubtitleCrewmate>Imposteurs à bord : {0}</BS_TeamSubtitleCrewmate>
+	<BS_TeamSubtitleImpostor>Éliminer l'équipage sans se faire repérer</BS_TeamSubtitleImpostor>
+	<BS_Continue>Continuer</BS_Continue>
+	<BS_Understood>Compris</BS_Understood>
+
+	<BS_CallMeeting>Convoquer une réunion</BS_CallMeeting>
+	<BS_CallMeetingDesc>Convoque tout l'équipage à la cafétéria pour un vote.</BS_CallMeetingDesc>
+	<BS_MeetingCooldown>Le bouton n'est pas encore prêt.</BS_MeetingCooldown>
+	<BS_Cameras>Caméras</BS_Cameras>
+	<BS_CamerasDesc>Affiche chaque pièce et les colons qui s'y trouvent.</BS_CamerasDesc>
+	<BS_ShipMap>Carte du vaisseau</BS_ShipMap>
+	<BS_ShipMapDesc>Affiche la carte du vaisseau, avec le nombre de colons dans chaque pièce.</BS_ShipMapDesc>
+	<BS_NobodyAround>Aucun colon n'est dans une pièce.</BS_NobodyAround>
+
+	<BS_TaskProgress>Tâche terminée ({0} sur {1}).</BS_TaskProgress>
+	<BS_SabotageReactor>Fusion du réacteur</BS_SabotageReactor>
+	<BS_SabotageO2>Épuisement de l'O2</BS_SabotageO2>
+	<BS_SabotageText>Sabotage ! Stations à réparer : {0}. Environ {1} secondes restantes.</BS_SabotageText>
+	<BS_SabotageFixed>Le sabotage a été réparé.</BS_SabotageFixed>
+	<BS_SabotageNotReady>Aucun sabotage n'est possible pour le moment.</BS_SabotageNotReady>
+
+	<BS_Kill>Tuer</BS_Kill>
+	<BS_KillDesc>Tue le membre d'équipage le plus proche à portée. À faire quand personne ne regarde.</BS_KillDesc>
+	<BS_KillNotReady>La lame n'est pas encore prête.</BS_KillNotReady>
+	<BS_NoVictim>Personne n'est à portée.</BS_NoVictim>
+	<BS_YouKilled>Meurtre de {0} commis.</BS_YouKilled>
+	<BS_Sabotage>Sabotage</BS_Sabotage>
+	<BS_SabotageDesc>Lance un sabotage que l'équipage doit réparer.</BS_SabotageDesc>
+
+	<BS_Vitals>Signes vitaux</BS_Vitals>
+	<BS_VitalsDesc>Affiche qui est encore en vie.</BS_VitalsDesc>
+	<BS_VitalsText>Encore en vie : {0}.</BS_VitalsText>
+	<BS_TrackGizmo>Pister</BS_TrackGizmo>
+	<BS_TrackDesc>Suit un colon pendant une journée.</BS_TrackDesc>
+	<BS_Tracking>Pistage de {0} en cours.</BS_Tracking>
+	<BS_TrackReport>Position de {0} : {1}.</BS_TrackReport>
+	<BS_RoomLine>{0} : {1}</BS_RoomLine>
+	<BS_Room_ReactorRear>Réacteur arrière</BS_Room_ReactorRear>
+	<BS_Room_UpperEngine>Moteur supérieur</BS_Room_UpperEngine>
+	<BS_Room_Security>Sécurité</BS_Room_Security>
+	<BS_Room_Electrical>Électricité</BS_Room_Electrical>
+	<BS_Room_Medbay>Infirmerie</BS_Room_Medbay>
+	<BS_Room_LowerEngine>Moteur inférieur</BS_Room_LowerEngine>
+	<BS_Room_CorridorLeft>Couloir gauche</BS_Room_CorridorLeft>
+	<BS_Room_Cafeteria>Cafétéria</BS_Room_Cafeteria>
+	<BS_Room_Admin>Administration</BS_Room_Admin>
+	<BS_Room_Storage>Stockage</BS_Room_Storage>
+	<BS_Room_Communications>Communications</BS_Room_Communications>
+	<BS_Room_CorridorRight>Couloir droit</BS_Room_CorridorRight>
+	<BS_Room_Weapons>Armes</BS_Room_Weapons>
+	<BS_Room_O2>O2</BS_Room_O2>
+	<BS_Room_Shields>Boucliers</BS_Room_Shields>
+	<BS_Room_Navigation>Navigation</BS_Room_Navigation>
+	<BS_Room_ReactorFront>Réacteur avant</BS_Room_ReactorFront>
+	<BS_NecroHears>Le corps de {0} se fait entendre : {1}.</BS_NecroHears>
+	<BS_ShapeshiftGizmo>Métamorphose</BS_ShapeshiftGizmo>
+	<BS_ShapeshiftDesc>Prend la couleur de combinaison d'un autre colon pendant une journée.</BS_ShapeshiftDesc>
+	<BS_Shapeshifted>Apparence de {0} adoptée.</BS_Shapeshifted>
+	<BS_VanishGizmo>Disparaître</BS_VanishGizmo>
+	<BS_VanishDesc>Pendant un court instant, les meurtres ne sont pas vus.</BS_VanishDesc>
+	<BS_Vanished>Disparition de la vue.</BS_Vanished>
+
+	<BS_BodyReported>{0} a trouvé le corps de {1}</BS_BodyReported>
+	<BS_EmergencyMeeting>Réunion d'urgence</BS_EmergencyMeeting>
+	<BS_VotePrompt>Qui est l'imposteur ? Voter, ou passer.</BS_VotePrompt>
+	<BS_VoteSpectator>Le vote peut seulement être observé.</BS_VoteSpectator>
+	<BS_Vote>Voter</BS_Vote>
+	<BS_Skip>Passer</BS_Skip>
+	<BS_NobodyEjected>Personne n'a été éjecté.</BS_NobodyEjected>
+	<BS_WasImpostor>{0} faisait partie des imposteurs.</BS_WasImpostor>
+	<BS_WasNotImpostor>{0} ne faisait pas partie des imposteurs.</BS_WasNotImpostor>
+	<BS_ImpostorsLeft>Imposteurs restants : {0}.</BS_ImpostorsLeft>
+
+	<BS_CrewWins>L'équipage gagne</BS_CrewWins>
+	<BS_ImpostorsWin>Les imposteurs gagnent</BS_ImpostorsWin>
+	<BS_WinEjected>Tous les imposteurs sont éliminés.</BS_WinEjected>
+	<BS_WinOutnumbered>Les imposteurs sont aussi nombreux que l'équipage.</BS_WinOutnumbered>
+	<BS_WinSabotage>Le sabotage n'a pas été réparé à temps.</BS_WinSabotage>
+	<BS_SabotageDoors>Verrouillage des portes</BS_SabotageDoors>
+	<BS_SabotageDoorsText>Toutes les portes sont verrouillées pour un moment. Le bouton d'urgence est désactivé et les corps ne peuvent pas être signalés.</BS_SabotageDoorsText>
+	<BS_KillBlocked>Un gardien a protégé la cible : le meurtre a échoué.</BS_KillBlocked>
+	<BS_EvidenceReady>L'équipage a assez de preuves contre {0}. Élimination de {0} possible.</BS_EvidenceReady>
+	<BS_EjectVote>Éjection de {0} par vote</BS_EjectVote>
+	<BS_EjectEvidence>Élimination de {0} d'après les preuves.</BS_EjectEvidence>
+	<BS_BecameGuardianGhost>Statut de fantôme gardien : les tâches restent possibles et un colon peut être protégé contre le prochain meurtre.</BS_BecameGuardianGhost>
+	<BS_BecameTaskGhost>Statut de fantôme : seules les tâches restent possibles.</BS_BecameTaskGhost>
+	<BS_Protecting>Protection de {0} contre le prochain meurtre.</BS_Protecting>
+	<BS_ButtonPressed>{0} a appuyé sur le bouton d'urgence</BS_ButtonPressed>
+	<BS_YouArgue>Accusation de {0} : « {1} »</BS_YouArgue>
+	<BS_ArgumentPrompt>Raison du soupçon envers {0} ? (facultatif)</BS_ArgumentPrompt>
+	<BS_Back>Retour</BS_Back>
+	<BS_ConfirmVote>Confirmer le vote</BS_ConfirmVote>
+	<BS_Protect>Protéger</BS_Protect>
+	<BS_ProtectDesc>Protège un colon contre le prochain meurtre.</BS_ProtectDesc>
+	<BS_Accuse>Éliminer</BS_Accuse>
+	<BS_AccuseDesc>Élimine sans vote un imposteur contre qui l'équipage a assez de preuves.</BS_AccuseDesc>
+	<BS_GhostCannot>Un fantôme peut seulement faire des tâches.</BS_GhostCannot>
+</LanguageData>

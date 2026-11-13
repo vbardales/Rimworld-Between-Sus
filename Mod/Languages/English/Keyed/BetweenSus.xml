@@ -39,6 +39,24 @@
 	<BS_TrackDesc>Follows one colonist for a day.</BS_TrackDesc>
 	<BS_Tracking>You are tracking {0}.</BS_Tracking>
 	<BS_TrackReport>{0} is in {1}.</BS_TrackReport>
+	<BS_RoomLine>{0}: {1}</BS_RoomLine>
+	<BS_Room_ReactorRear>Rear reactor</BS_Room_ReactorRear>
+	<BS_Room_UpperEngine>Upper engine</BS_Room_UpperEngine>
+	<BS_Room_Security>Security</BS_Room_Security>
+	<BS_Room_Electrical>Electrical</BS_Room_Electrical>
+	<BS_Room_Medbay>Medbay</BS_Room_Medbay>
+	<BS_Room_LowerEngine>Lower engine</BS_Room_LowerEngine>
+	<BS_Room_CorridorLeft>Left corridor</BS_Room_CorridorLeft>
+	<BS_Room_Cafeteria>Cafeteria</BS_Room_Cafeteria>
+	<BS_Room_Admin>Admin</BS_Room_Admin>
+	<BS_Room_Storage>Storage</BS_Room_Storage>
+	<BS_Room_Communications>Communications</BS_Room_Communications>
+	<BS_Room_CorridorRight>Right corridor</BS_Room_CorridorRight>
+	<BS_Room_Weapons>Weapons</BS_Room_Weapons>
+	<BS_Room_O2>O2</BS_Room_O2>
+	<BS_Room_Shields>Shields</BS_Room_Shields>
+	<BS_Room_Navigation>Navigation</BS_Room_Navigation>
+	<BS_Room_ReactorFront>Front reactor</BS_Room_ReactorFront>
 	<BS_NecroHears>You hear the body of {0} in {1}.</BS_NecroHears>
 	<BS_ShapeshiftGizmo>Shapeshift</BS_ShapeshiftGizmo>
 	<BS_ShapeshiftDesc>Takes the suit colour of another colonist for a day.</BS_ShapeshiftDesc>
@@ -54,7 +72,6 @@
 	<BS_Vote>Vote</BS_Vote>
 	<BS_Skip>Skip</BS_Skip>
 	<BS_NobodyEjected>Nobody was ejected.</BS_NobodyEjected>
-	<BS_Ejected>{0} was ejected</BS_Ejected>
 	<BS_WasImpostor>{0} was an impostor.</BS_WasImpostor>
 	<BS_WasNotImpostor>{0} was not an impostor.</BS_WasNotImpostor>
 	<BS_ImpostorsLeft>Impostors left: {0}.</BS_ImpostorsLeft>
@@ -63,7 +80,6 @@
 	<BS_ImpostorsWin>The impostors win</BS_ImpostorsWin>
 	<BS_WinEjected>Every impostor is gone.</BS_WinEjected>
 	<BS_WinOutnumbered>The impostors are as many as the crew.</BS_WinOutnumbered>
-	<BS_WinTasks>Every task is done.</BS_WinTasks>
 	<BS_WinSabotage>The sabotage was not repaired in time.</BS_WinSabotage>
 	<BS_SabotageDoors>Door lockdown</BS_SabotageDoors>
 	<BS_SabotageDoorsText>Every door is locked for a short while. The emergency button is off and bodies cannot be reported.</BS_SabotageDoorsText>

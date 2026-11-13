@@ -104,7 +104,7 @@ namespace BetweenSus
         private string RoomLabel(IntVec3 cell)
         {
             string name = RoomName(cell);
-            return name.NullOrEmpty() ? "?" : GenText.SplitCamelCase(name);
+            return name.NullOrEmpty() ? "?" : ("BS_Room_" + name).Translate().ToString();
         }
 
         // ---------------------------------------------------------------- tasks and sabotage

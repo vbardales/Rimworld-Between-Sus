@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<BS_CeilingLight.label>lumière du vaisseau</BS_CeilingLight.label>
+	<BS_CeilingLight.description>Une lumière intégrée au vaisseau. Elle ne consomme pas d'énergie.</BS_CeilingLight.description>
+	<BS_EmergencyButton.label>bouton d'urgence</BS_EmergencyButton.label>
+	<BS_EmergencyButton.description>Le gros bouton rouge de la cafétéria. Le sélectionner convoque tout l'équipage à une réunion.</BS_EmergencyButton.description>
+	<BS_TaskStation.label>station de tâches</BS_TaskStation.label>
+	<BS_TaskStation.description>Une station à bord du vaisseau. Un membre d'équipage qui y travaille termine une tâche. Sélectionner un colon et donner la priorité au travail « Tâches ».</BS_TaskStation.description>
+	<BS_FixReactorStation.label>station de réparation du réacteur</BS_FixReactorStation.label>
+	<BS_FixReactorStation.description>À réparer pendant un sabotage du réacteur. Les deux stations du réacteur doivent être réparées.</BS_FixReactorStation.description>
+	<BS_FixO2Station.label>station de réparation d'O2</BS_FixO2Station.label>
+	<BS_FixO2Station.description>À réparer pendant un sabotage d'O2. Les deux stations d'O2 doivent être réparées.</BS_FixO2Station.description>
+	<BS_SecurityConsole.label>console de sécurité</BS_SecurityConsole.label>
+	<BS_SecurityConsole.description>Affiche chaque pièce et les colons qui s'y trouvent.</BS_SecurityConsole.description>
+	<BS_AdminConsole.label>console d'administration</BS_AdminConsole.label>
+	<BS_AdminConsole.description>Affiche la carte du vaisseau, avec le nombre de colons dans chaque pièce.</BS_AdminConsole.description>
+	<BS_CrewSuit.label>combinaison d'équipage</BS_CrewSuit.label>
+	<BS_CrewSuit.description>La combinaison standard de l'équipage du vaisseau. Tout le monde porte la même, seule la couleur change.</BS_CrewSuit.description>
+</LanguageData>

@@ -16,6 +16,7 @@ namespace BetweenSus
         {
             public string Name;
             public CellRect Rect;
+            public string Label => ("BS_Room_" + Name).Translate().ToString();
             public Room(string name, int x0, int z0, int x1, int z1)
             {
                 Name = name;

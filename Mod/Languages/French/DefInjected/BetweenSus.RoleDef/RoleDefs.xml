@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<BS_Crewmate_Innocent.label>membre d'équipage innocent</BS_Crewmate_Innocent.label>
+	<BS_Crewmate_Innocent.description>Aucun pouvoir spécial. Faire ses tâches, observer les autres, bien voter.</BS_Crewmate_Innocent.description>
+	<BS_Crewmate_Innocent.tip>Trouver les imposteurs avant qu'ils frappent.</BS_Crewmate_Innocent.tip>
+	<BS_Crewmate_Innocent.abilities.0.label>Yeux vifs</BS_Crewmate_Innocent.abilities.0.label>
+	<BS_Crewmate_Innocent.abilities.0.description>Voit ce que tout le monde voit. Se fier à ce qui est observé, pas à ce qui est dit.</BS_Crewmate_Innocent.abilities.0.description>
+
+	<BS_Crewmate_Engineer.label>membre d'équipage ingénieur</BS_Crewmate_Engineer.label>
+	<BS_Crewmate_Engineer.description>Garde le vaisseau en marche.</BS_Crewmate_Engineer.description>
+	<BS_Crewmate_Engineer.tip>Au début d'un sabotage, aucun autre rôle ne répare plus vite.</BS_Crewmate_Engineer.tip>
+	<BS_Crewmate_Engineer.abilities.0.label>Réparations rapides</BS_Crewmate_Engineer.abilities.0.label>
+	<BS_Crewmate_Engineer.abilities.0.description>Termine les tâches et les réparations de sabotage deux fois plus vite.</BS_Crewmate_Engineer.abilities.0.description>
+
+	<BS_Crewmate_Scientist.label>membre d'équipage scientifique</BS_Crewmate_Scientist.label>
+	<BS_Crewmate_Scientist.description>Surveille les signes vitaux de l'équipage.</BS_Crewmate_Scientist.description>
+	<BS_Crewmate_Scientist.tip>Un nom absent de la liste est un nom inquiétant.</BS_Crewmate_Scientist.tip>
+	<BS_Crewmate_Scientist.abilities.0.label>Signes vitaux</BS_Crewmate_Scientist.abilities.0.label>
+	<BS_Crewmate_Scientist.abilities.0.description>Le bouton Signes vitaux indique qui est encore en vie.</BS_Crewmate_Scientist.abilities.0.description>
+
+	<BS_Crewmate_Tracker.label>membre d'équipage pisteur</BS_Crewmate_Tracker.label>
+	<BS_Crewmate_Tracker.description>Peut suivre un colon à travers le vaisseau.</BS_Crewmate_Tracker.description>
+	<BS_Crewmate_Tracker.tip>Pister la personne la plus douteuse, puis comparer avec les autres.</BS_Crewmate_Tracker.tip>
+	<BS_Crewmate_Tracker.abilities.0.label>Pistage</BS_Crewmate_Tracker.abilities.0.label>
+	<BS_Crewmate_Tracker.abilities.0.description>Choisir un colon : pendant une journée, la pièce où se trouve ce colon est signalée toutes les quelques heures.</BS_Crewmate_Tracker.abilities.0.description>
+
+	<BS_Crewmate_Necromancer.label>membre d'équipage nécromancien</BS_Crewmate_Necromancer.label>
+	<BS_Crewmate_Necromancer.description>Entend les morts.</BS_Crewmate_Necromancer.description>
+	<BS_Crewmate_Necromancer.tip>Savoir où gît un corps ne dit pas qui a frappé.</BS_Crewmate_Necromancer.tip>
+	<BS_Crewmate_Necromancer.abilities.0.label>Murmures</BS_Crewmate_Necromancer.abilities.0.label>
+	<BS_Crewmate_Necromancer.abilities.0.description>Dès que quelqu'un meurt, le corps se fait entendre et la pièce où il gît est connue.</BS_Crewmate_Necromancer.abilities.0.description>
+
+	<BS_Impostor_Impostor.label>imposteur</BS_Impostor_Impostor.label>
+	<BS_Impostor_Impostor.description>Imposteur. Éliminer l'équipage sans se faire prendre.</BS_Impostor_Impostor.description>
+	<BS_Impostor_Impostor.tip>Rester près des autres imposteurs, sans que cela se voie.</BS_Impostor_Impostor.tip>
+	<BS_Impostor_Impostor.abilities.0.label>Couverture</BS_Impostor_Impostor.abilities.0.label>
+	<BS_Impostor_Impostor.abilities.0.description>Apparence de n'importe quel membre d'équipage. Se fondre dans la masse : travailler, réparer, suivre l'équipage.</BS_Impostor_Impostor.abilities.0.description>
+	<BS_Impostor_Impostor.abilities.1.label>Meurtre et sabotage</BS_Impostor_Impostor.abilities.1.label>
+	<BS_Impostor_Impostor.abilities.1.description>Tuer un membre d'équipage à portée quand personne ne regarde. Lancer des sabotages pour diviser l'équipage.</BS_Impostor_Impostor.abilities.1.description>
+
+	<BS_Impostor_Shapeshifter.label>imposteur métamorphe</BS_Impostor_Shapeshifter.label>
+	<BS_Impostor_Shapeshifter.description>Peut emprunter un autre visage.</BS_Impostor_Shapeshifter.description>
+	<BS_Impostor_Shapeshifter.tip>Se métamorphoser juste avant un meurtre, pour que les témoins accusent quelqu'un d'autre.</BS_Impostor_Shapeshifter.tip>
+	<BS_Impostor_Shapeshifter.abilities.0.label>Métamorphose</BS_Impostor_Shapeshifter.abilities.0.label>
+	<BS_Impostor_Shapeshifter.abilities.0.description>Prend la couleur de combinaison d'un autre colon pendant une journée.</BS_Impostor_Shapeshifter.abilities.0.description>
+
+	<BS_Impostor_Phantom.label>imposteur fantôme</BS_Impostor_Phantom.label>
+	<BS_Impostor_Phantom.description>Peut disparaître de la vue.</BS_Impostor_Phantom.description>
+	<BS_Impostor_Phantom.tip>Disparaître, frapper, et laisser les autres s'interroger.</BS_Impostor_Phantom.tip>
+	<BS_Impostor_Phantom.abilities.0.label>Disparition</BS_Impostor_Phantom.abilities.0.label>
+	<BS_Impostor_Phantom.abilities.0.description>Pendant un court instant, personne ne voit l'action : les meurtres n'ont pas de témoins.</BS_Impostor_Phantom.abilities.0.description>
+
+	<BS_Impostor_Acid.label>imposteur acide</BS_Impostor_Acid.label>
+	<BS_Impostor_Acid.description>Les victimes ne laissent rien derrière elles.</BS_Impostor_Acid.description>
+	<BS_Impostor_Acid.tip>Pas de corps, pas de signalement : l'équipage ne remarque qu'une place vide.</BS_Impostor_Acid.tip>
+	<BS_Impostor_Acid.abilities.0.label>Dissolution</BS_Impostor_Acid.abilities.0.label>
+	<BS_Impostor_Acid.abilities.0.description>Le corps d'un colon tué se dissout, donc personne ne peut le signaler.</BS_Impostor_Acid.abilities.0.description>
+
+	<BS_Impostor_Ninja.label>imposteur ninja</BS_Impostor_Ninja.label>
+	<BS_Impostor_Ninja.description>Frappe vite et souvent.</BS_Impostor_Ninja.description>
+	<BS_Impostor_Ninja.tip>Ne pas en abuser : un deuxième meurtre rapide se rattache facilement à son auteur.</BS_Impostor_Ninja.tip>
+	<BS_Impostor_Ninja.abilities.0.label>Lame vive</BS_Impostor_Ninja.abilities.0.label>
+	<BS_Impostor_Ninja.abilities.0.description>Le délai entre deux meurtres est divisé par deux.</BS_Impostor_Ninja.abilities.0.description>
+
+	<BS_Impostor_Pro.label>imposteur pro</BS_Impostor_Pro.label>
+	<BS_Impostor_Pro.description>A déjà fait cela auparavant.</BS_Impostor_Pro.description>
+	<BS_Impostor_Pro.tip>Doser l'effort : plus d'actions possibles, donc un équipage plus attentif.</BS_Impostor_Pro.tip>
+	<BS_Impostor_Pro.abilities.0.label>Professionnel</BS_Impostor_Pro.abilities.0.label>
+	<BS_Impostor_Pro.abilities.0.description>Le délai entre deux meurtres vaut le quart du normal, et les sabotages laissent plus de temps à l'équipage, donc ils paraissent moins urgents.</BS_Impostor_Pro.abilities.0.description>
+</LanguageData>
