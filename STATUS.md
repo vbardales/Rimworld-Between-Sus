@@ -36,6 +36,7 @@ remaining:
   - "2026-11-12: second /review-translation (after the fixes): one text fix applied (BS_SabotageFixed), nothing else; title French form still waits for Virginie"
   - "2026-11-13: third /review-translation: BS_EvidenceReady fixed (They to {0}); title French form still waits for Virginie, TITLE? sent to Audit"
   - "2026-11-13: fourth /review-translation: BS_EmergencyButton description fixed (of to in the cafeteria); title decided (Entre Sus(pects)), recorded in Docs/review-names.md"
+  - "2026-11-13: English text review validated by Virginie (five ChatGPT passes, last one with no correction); translation_en and translation_fr stay unchecked until the localize audit and the French table"
 updated: 2026-11-13
 protocols_read_sha: 2aa9ba8498383385ae7fc0df815dc67b78732afa
 ---
