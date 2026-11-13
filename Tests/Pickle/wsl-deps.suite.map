@@ -1,0 +1,7 @@
+# Pass for the suite (02-boot, 03-emergency-button): a new colony on the Between Sus scenario, written at writeTests and not run.
+# Same stage as wsl-deps.reference.map, plus the LoadAudit companion (load of the mod is clean). The PickleTools bundle holds KeyedClick, InspectTabs, ClearScreen.
+brrainz.harmony                      2009463077
+nelim.pickletools.newcolony          path:PickleTools/NewColony/Mod
+nelim.pickletools.camerazoom         path:PickleTools/CameraZoom/Mod
+nelim.pickletools.loadaudit          path:PickleTools/LoadAudit/Mod
+nelim.pickletools                    path:PickleTools/Mod

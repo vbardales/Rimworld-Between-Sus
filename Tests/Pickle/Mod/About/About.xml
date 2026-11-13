@@ -17,10 +17,6 @@
       <displayName>Pickle</displayName>
       <steamWorkshopUrl>steam://url/CommunityFilePage/3791648678</steamWorkshopUrl>
     </li>
-    <li>
-      <packageId>nelim.pickletools</packageId>
-      <displayName>Nelim's Pickle Tools</displayName>
-    </li>
   </modDependencies>
   <loadAfter>
     <li>nelim.betweensus</li>
