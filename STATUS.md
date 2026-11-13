@@ -38,6 +38,7 @@ remaining:
   - "2026-11-13: English text review validated by Virginie (five ChatGPT passes, last one with no correction); translation_en and translation_fr stay unchecked until the localize audit and the French table"
   - "2026-11-13: unverified: French and room names in game (raw keys, clipping, RoleDef abilities.N.label injection through [MustTranslate]) wait for playTests; Virginie French review pending after /review-translation"
   - "2026-11-13: French /review-translation page 1 of 1 read: 4 French fixes applied, 0 refused, no proper noun to decide; waiting for Virginie French review (translation_fr stays partial until she validates)"
+  - "2026-11-13: second French /review-translation read: 0 applied, 1 refused (BS_Crewmate_Innocent.tip, masculine-only agreement), no proper noun to decide; waiting for Virginie French review"
 updated: 2026-11-13
 protocols_read_sha: a5c2b748de9f1e3275c45ba2877929b21ca94269
 ---

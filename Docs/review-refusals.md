@@ -12,3 +12,4 @@ Every ChatGPT proposal refused or postponed, with the reason.
 | 2026-11-12 | Proper noun `Harmony` | Keep or validate | Kept: dependency name, not translated. |
 | 2026-11-12 | Proper nouns `Between Sus`, `Harmony` (second review) | French form of the title; keep Harmony | Title: owner call pending. Harmony kept. No upstream PR: upstream_mod_remotes is N/A (original work). |
 | 2026-11-13 | Proper noun `Between Sus` (third review) | French form of the title | Owner call pending (TITLE? sent to Audit). |
+| 2026-11-13 | `BS_Crewmate_Innocent.tip` (French) | "Trouver les imposteurs avant d'être découvert." | Refused: "découvert" agrees in the masculine only for a pawn whose gender is unknown (epicene rule, TRANSLATIONS.md); "avant qu'ils frappent" kept. |
