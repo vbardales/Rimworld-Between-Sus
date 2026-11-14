@@ -21,7 +21,7 @@ Two teams (big roles): Crewmate, Impostor. A small role is the post AND the func
 
 - Map: custom scenario, the ship replaces the normal start map. 8 starting pawns, 2 impostors.
 - Two screens in a row, for the main pawn only: team, then small role.
-- All pawns wear the same suit `BS_CrewSuit`, one colour per pawn. The suit never reveals a role.
+- All pawns wear the same outfit, one colour per pawn: the core Recon armor `Apparel_ArmorRecon` (owner, 2026-11-14, dye checked by ticket 0b8c) and the helmet `Apparel_VacsuitHelmet` (Odyssey, owner, 2026-11-14, ticket 9d04); without the Odyssey DLC the helmet is skipped, no dependency. The outfit never reveals a role.
 
 ## Control model
 

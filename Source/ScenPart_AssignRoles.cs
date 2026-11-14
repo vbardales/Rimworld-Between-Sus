@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace BetweenSus
@@ -42,11 +43,20 @@ namespace BetweenSus
             {
                 var pawn = pawns[i];
                 pawn.apparel.DestroyAll();
-                var suit = (Apparel)ThingMaker.MakeThing(SuitDefOf.BS_CrewSuit);
-                suit.SetColor(colors[i % colors.Count]);
-                pawn.apparel.Wear(suit, dropReplacedApparel: false);
-                pawn.apparel.Lock(suit);
+                var color = colors[i % colors.Count];
+                Wear(pawn, SuitDefOf.Apparel_ArmorRecon, color);
+                // The helmet belongs to the Odyssey DLC: no DLC, no helmet, never a dependency.
+                var helmet = DefDatabase<ThingDef>.GetNamedSilentFail("Apparel_VacsuitHelmet");
+                if (helmet != null) Wear(pawn, helmet, color);
             }
+        }
+
+        private static void Wear(Pawn pawn, ThingDef def, Color color)
+        {
+            var apparel = (Apparel)ThingMaker.MakeThing(def, GenStuff.DefaultStuffFor(def));
+            apparel.SetColor(color);
+            pawn.apparel.Wear(apparel, dropReplacedApparel: false);
+            pawn.apparel.Lock(apparel);
         }
 
         public override void ExposeData()
@@ -59,7 +69,7 @@ namespace BetweenSus
     [DefOf]
     public static class SuitDefOf
     {
-        public static ThingDef BS_CrewSuit;
+        public static ThingDef Apparel_ArmorRecon;
 
         static SuitDefOf() => DefOfHelper.EnsureInitializedInCtor(typeof(SuitDefOf));
     }

@@ -106,8 +106,6 @@ Languages: French (180 keys, 0 missing against English). English is the source s
 | `BS_SecurityConsole.description` | Shows each room and the colonists inside. | Shows each room and the colonists inside. | Affiche chaque pièce et les colons qui s'y trouvent. |  |
 | `BS_AdminConsole.label` | admin console | admin console | console d'administration |  |
 | `BS_AdminConsole.description` | Shows the ship map, with the number of colonists in each room. | Shows the ship map, with the number of colonists in each room. | Affiche la carte du vaisseau, avec le nombre de colons dans chaque pièce. |  |
-| `BS_CrewSuit.label` | crew suit | crew suit | combinaison d'équipage |  |
-| `BS_CrewSuit.description` | The standard suit of the ship's crew. Everyone wears the same one, only the colour differs. | The standard suit of the ship's crew. Everyone wears the same one, only the colour differs. | La combinaison standard de l'équipage du vaisseau. Tout le monde porte la même, seule la couleur change. |  |
 
 ## French/DefInjected/WorkGiverDef/StationWork.xml
 

@@ -4,7 +4,7 @@
 
 - Teams and roles: `Team`, `RoleDef` (with abilities), `GameComponent_Roles` (assignment, main pawn, save/load), roles `BS_Crewmate_Innocent` and `BS_Impostor_Impostor`.
 - Scenario "Between Sus": 8 starting pawns standing on the ship, roles drawn at start, two reveal screens (team, then small role) for the main pawn.
-- Crew suit `BS_CrewSuit`: same suit for everyone, one colour per pawn, locked on the pawn (placeholder texture).
+- Crew outfit: every pawn wears the core Recon armor (`Apparel_ArmorRecon`) in its own colour, locked on the pawn, plus the Odyssey vacsuit helmet (`Apparel_VacsuitHelmet`) when the Odyssey DLC is active.
 - Order refusal: a pawn may refuse a player order (Harmony patch on `TryTakeOrderedJob`); impostors keep their cover.
 - Ship map: 17 rooms and corridors built by a map generator step, player start in the cafeteria.
 - Ship furniture: tables and chairs, shelves, beds, consoles, plants and machines in each room, glowing ship lights that need no power, and the emergency button in the cafeteria (placeholder art).

@@ -14,6 +14,4 @@
 	<BS_SecurityConsole.description>Affiche chaque pièce et les colons qui s'y trouvent.</BS_SecurityConsole.description>
 	<BS_AdminConsole.label>console d'administration</BS_AdminConsole.label>
 	<BS_AdminConsole.description>Affiche la carte du vaisseau, avec le nombre de colons dans chaque pièce.</BS_AdminConsole.description>
-	<BS_CrewSuit.label>combinaison d'équipage</BS_CrewSuit.label>
-	<BS_CrewSuit.description>La combinaison standard de l'équipage du vaisseau. Tout le monde porte la même, seule la couleur change.</BS_CrewSuit.description>
 </LanguageData>
