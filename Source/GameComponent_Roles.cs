@@ -49,6 +49,8 @@ namespace BetweenSus
             for (int i = 0; i < shuffled.Count; i++)
                 roles[shuffled[i]] = DrawRole(i < impostorCount ? Team.Impostor : Team.Crewmate);
             mainPawn = pawns.RandomElement();
+            Log.Message("[Between Sus] roles: main=" + mainPawn.LabelShort + "; "
+                + string.Join(", ", pawns.OrderBy(p => p.LabelShort).Select(p => p.LabelShort + "=" + roles[p]?.defName)));
         }
 
         private static RoleDef DrawRole(Team team)
