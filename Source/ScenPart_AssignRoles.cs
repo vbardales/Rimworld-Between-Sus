@@ -13,6 +13,9 @@ namespace BetweenSus
     public class ScenPart_AssignRoles : ScenPart
     {
         public int impostorCount = 2;
+        // Test hook, empty in the shipped scenario: roles forced by pawn name order, and which of them is the main pawn.
+        public List<RoleDef> forcedRoles;
+        public int forcedMainIndex;
 
         public override void PostGameStart()
         {
@@ -20,7 +23,7 @@ namespace BetweenSus
             var pawns = Find.CurrentMap?.mapPawns.FreeColonistsSpawned.ToList();
             if (roles == null || pawns == null || pawns.Count == 0) return;
 
-            roles.Assign(pawns, Math.Min(impostorCount, Math.Max(1, pawns.Count / 4)));
+            roles.Assign(pawns, Math.Min(impostorCount, Math.Max(1, pawns.Count / 4)), forcedRoles, forcedMainIndex);
             DressAll(pawns);
             Start(pawns);
             Find.WindowStack.Add(new Window_TeamReveal(roles));
@@ -63,6 +66,8 @@ namespace BetweenSus
         {
             base.ExposeData();
             Scribe_Values.Look(ref impostorCount, "impostorCount", 2);
+            Scribe_Collections.Look(ref forcedRoles, "forcedRoles", LookMode.Def);
+            Scribe_Values.Look(ref forcedMainIndex, "forcedMainIndex", 0);
         }
     }
 

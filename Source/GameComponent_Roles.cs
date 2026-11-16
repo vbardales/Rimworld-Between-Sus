@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
@@ -42,13 +43,21 @@ namespace BetweenSus
         public int ImpostorCount => roles.Values.Count(r => r.team == Team.Impostor);
 
         /// <summary>Draws impostorCount impostors at random, the rest are crewmates. The main pawn is drawn at random.</summary>
-        public void Assign(IList<Pawn> pawns, int impostorCount)
+        public void Assign(IList<Pawn> pawns, int impostorCount, IList<RoleDef> forcedRoles = null, int forcedMainIndex = 0)
         {
             roles.Clear();
             var shuffled = pawns.InRandomOrder().ToList();
             for (int i = 0; i < shuffled.Count; i++)
                 roles[shuffled[i]] = DrawRole(i < impostorCount ? Team.Impostor : Team.Crewmate);
             mainPawn = pawns.RandomElement();
+            if (forcedRoles != null && forcedRoles.Count > 0)
+            {
+                // Test hook: pawns sorted by name take the listed roles in order, the rest keep their draw.
+                var byName = pawns.OrderBy(p => p.LabelShort).ToList();
+                for (int i = 0; i < byName.Count && i < forcedRoles.Count; i++)
+                    if (forcedRoles[i] != null) roles[byName[i]] = forcedRoles[i];
+                mainPawn = byName[Math.Max(0, Math.Min(forcedMainIndex, byName.Count - 1))];
+            }
             Log.Message("[Between Sus] roles: main=" + mainPawn.LabelShort + "; "
                 + string.Join(", ", pawns.OrderBy(p => p.LabelShort).Select(p => p.LabelShort + "=" + roles[p]?.defName)));
         }
