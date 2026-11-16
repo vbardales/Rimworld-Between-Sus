@@ -46,7 +46,7 @@ remaining:
   - "2026-11-15: role-seed probe (commit 788950e, Assign logs '[Between Sus] roles:'; feature 06-role-seed, seed betweensus-roles): tickets 7ca3 (merged with 9078) and 3f9c both GREEN, same colonists but DIFFERENT roles (run a main=Kirill Impostor_Ninja; run b main=Pipkin Impostor_Pro): a fixed seed does NOT fix roles, so kills, sabotage and abilities (S03 to S26) cannot be scripted by seed; evidence read and deleted; open: owner choice of another way (role override hook) or hand play"
   - "2026-11-14: owner validated the first helmet (Apparel_VacsuitHelmet, Odyssey). Outfit wired in commit 2168f98: Apparel_ArmorRecon plus the helmet when the Odyssey DLC is active (GetNamedSilentFail, no hard dependency), BS_CrewSuit def and its French keys removed; build 0 errors, offline checks 9 of 10 (ModBasics: Preview.png missing, accepted), Rule-OwnValues passes; ticket c41c (01-reference-capture, "the crew in their suits, wide then close") GREEN 1/1 (19351 ms, summary.json passed), 2 captures in Tests/Pickle/Inbox/outfit (crew-close, ship-cafeteria); only Player.log error is the companion mod 'did not load any content' (expected, no defs); with 0b8c and 9d04 all colour and outfit scenarios are green; 2026-11-14: Virginie looked at the captures: the armor renders well (outfit validated); Recon armor adds real armor stats to every pawn (not checked against kill and damage rules); the Pickle test game must have Odyssey active for the helmet to show"
 updated: 2026-11-15
-protocols_read_sha: 8f5bd2ee32bbbe88cd98fa2ccad3b5672ae01206
+protocols_read_sha: b1f8b63443ea81f7c2e4d5a80b354c8d8933bf42
 ---
 
 # Between Sus: status
