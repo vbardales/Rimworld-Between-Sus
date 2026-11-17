@@ -5,3 +5,4 @@ nelim.pickletools.newcolony          path:PickleTools/NewColony/Mod
 nelim.pickletools.camerazoom         path:PickleTools/CameraZoom/Mod
 nelim.pickletools.loadaudit          path:PickleTools/LoadAudit/Mod
 nelim.pickletools                    path:PickleTools/Mod
+nelim.pickletools.colonistrace       path:PickleTools/ColonistRace/Mod
