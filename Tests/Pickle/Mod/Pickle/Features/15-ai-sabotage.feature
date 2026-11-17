@@ -1,4 +1,4 @@
-# S17 to S19 on the test scenario: an AI impostor starts a sabotage on its own (kind drawn at random, 15 percent chance per logic tick once the cooldown of 15000 ticks is over). Asserts the "[Between Sus] sabotage:" log line.
+# S17 to S19 on the test scenario: an AI impostor starts a sabotage on its own (kind drawn at random, 15 percent chance per logic tick once the cooldown of 15000 ticks is over). Asserts the "[Between Sus] sabotage:" log line. noAutoButton stops random button meetings: an open meeting window stops the logic, so ticket 020f saw no sabotage.
 @requires:nelim.pickletools
 @requires:nelim.pickletools.newcolony
 @requires:nelim.pickletools.loadaudit

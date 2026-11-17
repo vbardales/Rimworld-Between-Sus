@@ -34,6 +34,7 @@
 					<def>BS_AssignRoles</def>
 					<impostorCount>2</impostorCount>
 					<forcedMainIndex>0</forcedMainIndex>
+					<noAutoButton>true</noAutoButton>
 					<forcedRoles>
 						<li>BS_Impostor_Impostor</li>
 						<li>BS_Impostor_Ninja</li>
@@ -80,6 +81,7 @@
 					<def>BS_AssignRoles</def>
 					<impostorCount>2</impostorCount>
 					<forcedMainIndex>0</forcedMainIndex>
+					<noAutoButton>true</noAutoButton>
 					<startEvidence>3</startEvidence>
 					<forcedRoles>
 						<li>BS_Impostor_Impostor</li>
@@ -127,6 +129,7 @@
 					<def>BS_AssignRoles</def>
 					<impostorCount>1</impostorCount>
 					<forcedMainIndex>0</forcedMainIndex>
+					<noAutoButton>true</noAutoButton>
 					<startEvidence>3</startEvidence>
 					<forcedRoles>
 						<li>BS_Impostor_Impostor</li>

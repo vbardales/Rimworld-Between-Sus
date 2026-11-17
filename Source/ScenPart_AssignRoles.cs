@@ -18,6 +18,8 @@ namespace BetweenSus
         public int forcedMainIndex;
         // Test hook, 0 in the shipped scenario: evidence given at start to the first impostor by spawn order.
         public int startEvidence;
+        // Test hook, false in the shipped scenario: no meeting from a random button press (an open meeting window stops the logic).
+        public bool noAutoButton;
 
         public override void PostGameStart()
         {
@@ -28,6 +30,7 @@ namespace BetweenSus
             roles.Assign(pawns, Math.Min(impostorCount, Math.Max(1, pawns.Count / 4)), forcedRoles, forcedMainIndex);
             DressAll(pawns);
             Start(pawns);
+            if (GameComponent_Ship.Instance != null) GameComponent_Ship.Instance.noAutoButton = noAutoButton;
             if (startEvidence > 0)
             {
                 var suspect = pawns.FirstOrDefault(p => roles.TeamOf(p) == Team.Impostor);
@@ -76,6 +79,7 @@ namespace BetweenSus
             Scribe_Collections.Look(ref forcedRoles, "forcedRoles", LookMode.Def);
             Scribe_Values.Look(ref forcedMainIndex, "forcedMainIndex", 0);
             Scribe_Values.Look(ref startEvidence, "startEvidence", 0);
+            Scribe_Values.Look(ref noAutoButton, "noAutoButton", false);
         }
     }
 

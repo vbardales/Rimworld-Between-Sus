@@ -24,6 +24,8 @@ namespace BetweenSus
 
         public IntVec3 origin;
         private bool ended;
+        // Test hook, false in the shipped scenario: colonists never press the emergency button on their own.
+        public bool noAutoButton;
         private SabotageKind sabotage;
         private int sabotageEnd;
         private int sabotageCooldownEnd;
@@ -503,7 +505,7 @@ namespace BetweenSus
             if ((sabotage == SabotageKind.None && ReportBodies()) || Find.WindowStack.IsOpen<Window_Meeting>()) return;
 
             // Colonists may press the emergency button on their own.
-            if (CanCallMeeting && Rand.Chance(0.02f))
+            if (!noAutoButton && CanCallMeeting && Rand.Chance(0.02f))
             {
                 var presser = LivingCrew().RandomElementWithFallback();
                 if (presser != null) { StartMeeting(presser, null); return; }
@@ -555,6 +557,7 @@ namespace BetweenSus
         {
             Scribe_Values.Look(ref origin, "origin");
             Scribe_Values.Look(ref ended, "ended");
+            Scribe_Values.Look(ref noAutoButton, "noAutoButton");
             Scribe_Values.Look(ref sabotage, "sabotage");
             Scribe_Values.Look(ref sabotageEnd, "sabotageEnd");
             Scribe_Values.Look(ref sabotageCooldownEnd, "sabotageCooldownEnd");
