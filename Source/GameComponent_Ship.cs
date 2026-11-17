@@ -194,6 +194,7 @@ namespace BetweenSus
         public void OnFakeTask(Pawn impostor)
         {
             int seen = WitnessCount(impostor, null);
+            Log.Message("[Between Sus] fake task: " + impostor.LabelShort + ", witnesses=" + seen);
             if (seen > 0) AddEvidence(impostor, 1);
         }
 
