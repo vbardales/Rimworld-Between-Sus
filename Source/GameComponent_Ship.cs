@@ -184,6 +184,7 @@ namespace BetweenSus
         public void AddEvidence(Pawn impostor, int amount)
         {
             evidence[impostor] = EvidenceOn(impostor) + amount;
+            Log.Message("[Between Sus] evidence: " + impostor.LabelShort + "=" + EvidenceOn(impostor));
             var main = Roles.MainPawn;
             if (main != null && Roles.TeamOf(main) == Team.Crewmate && EvidenceOn(impostor) >= EvidenceNeeded)
                 Messages.Message("BS_EvidenceReady".Translate(impostor.LabelShort), MessageTypeDefOf.PositiveEvent, false);
@@ -229,6 +230,7 @@ namespace BetweenSus
             }
             var pos = victim.Position;
             int witnesses = WitnessCount(killer, victim);
+            Log.Message("[Between Sus] kill: " + killer.LabelShort + " killed " + victim.LabelShort + ", witnesses=" + witnesses);
 
             victim.Kill(new DamageInfo(DamageDefOf.Cut, 9999f, 999f, -1f, killer));
             if (witnesses > 0) AddEvidence(killer, EvidenceNeeded * witnesses);
@@ -356,6 +358,7 @@ namespace BetweenSus
         private void Eject(Pawn pawn, string causeKey)
         {
             bool impostor = Roles.TeamOf(pawn) == Team.Impostor;
+            Log.Message("[Between Sus] eject: " + pawn.LabelShort + ", " + (impostor ? "impostor" : "crewmate") + ", cause=" + causeKey);
             var map = pawn.Map ?? Map;
             var engine = ShipLayout.Rooms.Where(r => r.Name == "UpperEngine" || r.Name == "LowerEngine").RandomElement();
             var c = engine.Rect.CenterCell;
