@@ -1,5 +1,5 @@
-# S07 on the test scenario: enough evidence against an impostor lets the crew eliminate it without a vote.
-# Asserts through the "[Between Sus] eject:" log line (GameComponent_Ship). The elimination is automatic (chance 0.5 every 250 ticks once an impostor holds 3 evidence), so wait 150000 ticks (60000 gave Sienna only 2 evidence, ticket f1be).
+# S07 on the test scenario BS_BetweenSus_TestEvidence (startEvidence 3: the first impostor holds 3 evidence at start, random fake tasks gave only 1 to 2 in ticket f1be and 1c29).
+# Asserts through the "[Between Sus] eject:" log line (GameComponent_Ship). The elimination is automatic (chance 0.5 every 250 ticks once an impostor holds 3 evidence), so wait 20000 ticks.
 # The gizmo and the message for a crewmate main pawn are not asserted (window and message need NPT steps). One feature per goal.
 @requires:nelim.pickletools
 @requires:nelim.pickletools.newcolony
@@ -10,9 +10,9 @@ Feature: Between Sus evidence elimination
     Given the main menu is open
     And Nelim's Pickle Tools: the new colony's seed is "betweensus-forced"
     And Nelim's Pickle Tools: the new colony's map size is 120
-    And Nelim's Pickle Tools: the new colony's scenario is "BS_BetweenSus_Test"
+    And Nelim's Pickle Tools: the new colony's scenario is "BS_BetweenSus_TestEvidence"
     When Nelim's Pickle Tools: a new colony is started
     And Nelim's Pickle Tools: the new colony's colonists have landed
-    And Nelim's Pickle Tools: the game is advanced by 150000 ticks
+    And Nelim's Pickle Tools: the game is advanced by 20000 ticks
     Then Nelim's Pickle Tools: the game log holds the text "[Between Sus] eject:"
     And no errors were logged
