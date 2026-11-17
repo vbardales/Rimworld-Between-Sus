@@ -13,7 +13,7 @@ namespace BetweenSus
     public class ScenPart_AssignRoles : ScenPart
     {
         public int impostorCount = 2;
-        // Test hook, empty in the shipped scenario: roles forced by pawn name order, and which of them is the main pawn.
+        // Test hook, empty in the shipped scenario: roles forced by pawn spawn order, and which of them is the main pawn.
         public List<RoleDef> forcedRoles;
         public int forcedMainIndex;
 

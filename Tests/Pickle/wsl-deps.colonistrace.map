@@ -1,0 +1,6 @@
+# Pass for S04 (09-order-refusal): the ColonistRace steps (colonist by number, mood, orders) need the empty StandaloneBase, not the PickleTools bundle (the bundle is incompatibleWith colonistrace).
+brrainz.harmony                      2009463077
+nelim.pickletools                    path:PickleTools/Tests/Pickle/StandaloneBase/Mod
+nelim.pickletools.newcolony          path:PickleTools/NewColony/Mod
+nelim.pickletools.loadaudit          path:PickleTools/LoadAudit/Mod
+nelim.pickletools.colonistrace       path:PickleTools/ColonistRace/Mod

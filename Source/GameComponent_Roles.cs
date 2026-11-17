@@ -52,8 +52,8 @@ namespace BetweenSus
             mainPawn = pawns.RandomElement();
             if (forcedRoles != null && forcedRoles.Count > 0)
             {
-                // Test hook: pawns sorted by name take the listed roles in order, the rest keep their draw.
-                var byName = pawns.OrderBy(p => p.LabelShort).ToList();
+                // Test hook: pawns in spawn order (the game colonist list) take the listed roles in order, the rest keep their draw.
+                var byName = pawns.ToList();
                 for (int i = 0; i < byName.Count && i < forcedRoles.Count; i++)
                     if (forcedRoles[i] != null) roles[byName[i]] = forcedRoles[i];
                 mainPawn = byName[Math.Max(0, Math.Min(forcedMainIndex, byName.Count - 1))];

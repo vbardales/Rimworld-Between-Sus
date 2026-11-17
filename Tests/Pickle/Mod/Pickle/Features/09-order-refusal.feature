@@ -13,6 +13,9 @@ Feature: Between Sus order refusal
     And Nelim's Pickle Tools: the new colony's scenario is "BS_BetweenSus_Test"
     When Nelim's Pickle Tools: a new colony is started
     And Nelim's Pickle Tools: the new colony's colonists have landed
+    And Nelim's Pickle Tools: the colonist number 1 is named "Ellie"
+    And Nelim's Pickle Tools: the colonist number 2 is named "Grant"
+    And Nelim's Pickle Tools: the colonist number 3 is named "JJ"
     And Nelim's Pickle Tools: "Ellie" is ordered to go to (60, 60) 100 times
     Then Nelim's Pickle Tools: the orders of "Ellie" were refused between 0 and 0 times
     When Nelim's Pickle Tools: "Grant" is ordered to go to (60, 60) 100 times
