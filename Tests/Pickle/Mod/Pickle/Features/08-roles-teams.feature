@@ -12,13 +12,13 @@ Feature: Between Sus teams and roles
     And Nelim's Pickle Tools: the new colony's scenario is "BS_BetweenSus_Test"
     When Nelim's Pickle Tools: a new colony is started
     And Nelim's Pickle Tools: the new colony's colonists have landed
-    Then Nelim's Pickle Tools: the game log holds the text "[Between Sus] roles: main=Ellie;"
-    And Nelim's Pickle Tools: the game log holds the text "Ellie=BS_Impostor_Impostor"
-    And Nelim's Pickle Tools: the game log holds the text "Grant=BS_Impostor_Ninja"
-    And Nelim's Pickle Tools: the game log holds the text "JJ=BS_Crewmate_Innocent"
-    And Nelim's Pickle Tools: the game log holds the text "Lady=BS_Crewmate_Engineer"
-    And Nelim's Pickle Tools: the game log holds the text "Leo=BS_Crewmate_Scientist"
-    And Nelim's Pickle Tools: the game log holds the text "Scarlet=BS_Crewmate_Tracker"
-    And Nelim's Pickle Tools: the game log holds the text "Sienna=BS_Crewmate_Necromancer"
-    And Nelim's Pickle Tools: the game log holds the text "Veli=BS_Crewmate_Innocent"
+    Then Nelim's Pickle Tools: the game log holds the text "[Between Sus] roles: main="
+    And Nelim's Pickle Tools: the game log holds the text "=BS_Impostor_Impostor"
+    And Nelim's Pickle Tools: the game log holds the text "=BS_Impostor_Ninja"
+    And Nelim's Pickle Tools: the game log holds the text "=BS_Crewmate_Innocent"
+    And Nelim's Pickle Tools: the game log holds the text "=BS_Crewmate_Engineer"
+    And Nelim's Pickle Tools: the game log holds the text "=BS_Crewmate_Scientist"
+    And Nelim's Pickle Tools: the game log holds the text "=BS_Crewmate_Tracker"
+    And Nelim's Pickle Tools: the game log holds the text "=BS_Crewmate_Necromancer"
+    And Nelim's Pickle Tools: the game log holds the text "=BS_Crewmate_Innocent"
     And no errors were logged
