@@ -136,6 +136,7 @@ namespace BetweenSus
                     door.SetForbidden(true, false);
                     lockedDoors.Add(door);
                 }
+                Log.Message("[Between Sus] sabotage: " + kind);
                 Find.LetterStack.ReceiveLetter("BS_SabotageDoors".Translate(), "BS_SabotageDoorsText".Translate(), LetterDefOf.ThreatBig);
                 return true;
             }
@@ -147,6 +148,7 @@ namespace BetweenSus
             fixedStationIds.Clear();
             sabotageEnd = Now + (kind == SabotageKind.Reactor ? 5400 : 7200);
             if (by != null && Roles.Is(by, "BS_Impostor_Pro")) sabotageEnd += 1800;
+            Log.Message("[Between Sus] sabotage: " + kind);
             string where = string.Join(", ", stations.Select(s => RoomLabel(s.Position)));
             Find.LetterStack.ReceiveLetter(
                 (kind == SabotageKind.Reactor ? "BS_SabotageReactor" : "BS_SabotageO2").Translate(),
@@ -313,6 +315,7 @@ namespace BetweenSus
                 : reporter != null
                     ? "BS_ButtonPressed".Translate(reporter.LabelShort).ToString()
                     : "BS_EmergencyMeeting".Translate().ToString();
+            Log.Message("[Between Sus] meeting: " + title);
             Find.WindowStack.Add(new Window_Meeting(title, Living().ToList(), roles.MainPawn));
         }
 
@@ -437,6 +440,7 @@ namespace BetweenSus
         private void End(bool crewWins, string reason)
         {
             ended = true;
+            Log.Message("[Between Sus] end: " + (crewWins ? "crew" : "impostors") + ", " + reason);
             var roleLines = Roles.AllPawns().Select(p => p.LabelShort + ": " + Roles.RoleOf(p)?.LabelCap.ToString());
             string title = (crewWins ? "BS_CrewWins" : "BS_ImpostorsWin").Translate();
             string text = reason + "\n\n" + string.Join("\n", roleLines);
