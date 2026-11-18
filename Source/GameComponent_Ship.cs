@@ -26,6 +26,8 @@ namespace BetweenSus
         private bool ended;
         // Test hook, false in the shipped scenario: colonists never press the emergency button on their own.
         public bool noAutoButton;
+        // Test hook, false in the shipped scenario: AI impostors never kill.
+        public bool noKill;
         private SabotageKind sabotage;
         private int sabotageEnd;
         private int sabotageCooldownEnd;
@@ -537,7 +539,7 @@ namespace BetweenSus
             if (sabotage == SabotageKind.None && Now >= sabotageCooldownEnd && Rand.Chance(0.15f))
                 StartSabotage(new[] { SabotageKind.Reactor, SabotageKind.O2, SabotageKind.Doors }.RandomElement(), imp);
 
-            if (!KillReady(imp)) return;
+            if (noKill || !KillReady(imp)) return;
             var victim = LivingCrew().Where(p => p != imp)
                 .OrderBy(p => p.Position.DistanceTo(imp.Position)).FirstOrDefault();
             if (victim == null) return;
@@ -558,6 +560,7 @@ namespace BetweenSus
             Scribe_Values.Look(ref origin, "origin");
             Scribe_Values.Look(ref ended, "ended");
             Scribe_Values.Look(ref noAutoButton, "noAutoButton");
+            Scribe_Values.Look(ref noKill, "noKill");
             Scribe_Values.Look(ref sabotage, "sabotage");
             Scribe_Values.Look(ref sabotageEnd, "sabotageEnd");
             Scribe_Values.Look(ref sabotageCooldownEnd, "sabotageCooldownEnd");

@@ -51,6 +51,54 @@
 	</ScenarioDef>
 
 	<ScenarioDef ParentName="ScenarioBase">
+		<defName>BS_BetweenSus_TestSabotage</defName>
+		<label>Between Sus (test, sabotage)</label>
+		<description>Test scenario with forced roles and no AI kill. Never published.</description>
+		<scenario>
+			<summary>Between Sus with forced roles and no AI kill.</summary>
+			<parts>
+				<li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+					<def>ConfigPage_ConfigureStartingPawns</def>
+					<pawnCount>8</pawnCount>
+					<pawnChoiceCount>10</pawnChoiceCount>
+				</li>
+				<li Class="ScenPart_PlayerPawnsArriveMethod">
+					<def>PlayerPawnsArriveMethod</def>
+					<method>Standing</method>
+					<visible>false</visible>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>MealSurvivalPack</thingDef>
+					<count>40</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+					<def>StartingThing_Defined</def>
+					<thingDef>MedicineIndustrial</thingDef>
+					<count>20</count>
+				</li>
+				<li Class="BetweenSus.ScenPart_AssignRoles">
+					<def>BS_AssignRoles</def>
+					<impostorCount>2</impostorCount>
+					<forcedMainIndex>0</forcedMainIndex>
+					<noAutoButton>true</noAutoButton>
+					<noKill>true</noKill>
+					<forcedRoles>
+						<li>BS_Impostor_Impostor</li>
+						<li>BS_Impostor_Ninja</li>
+						<li>BS_Crewmate_Innocent</li>
+						<li>BS_Crewmate_Engineer</li>
+						<li>BS_Crewmate_Scientist</li>
+						<li>BS_Crewmate_Tracker</li>
+						<li>BS_Crewmate_Necromancer</li>
+						<li>BS_Crewmate_Innocent</li>
+					</forcedRoles>
+				</li>
+			</parts>
+		</scenario>
+	</ScenarioDef>
+
+	<ScenarioDef ParentName="ScenarioBase">
 		<defName>BS_BetweenSus_TestEvidence</defName>
 		<label>Between Sus (test, evidence)</label>
 		<description>Test scenario with forced roles. Never published.</description>

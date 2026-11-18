@@ -1,4 +1,4 @@
-# S17 to S19 on the test scenario: an AI impostor starts a sabotage on its own (kind drawn at random, 15 percent chance per logic tick once the cooldown of 15000 ticks is over). Asserts the "[Between Sus] sabotage:" log line. noAutoButton stops random button meetings: an open meeting window stops the logic, so ticket 020f saw no sabotage.
+# S17 to S19 on the sabotage test scenario (noKill: no body report meeting): an AI impostor starts a sabotage on its own (kind drawn at random, 15 percent chance per logic tick once the cooldown of 15000 ticks is over). Asserts the "[Between Sus] sabotage:" log line. noAutoButton stops random button meetings: an open meeting window stops the logic, so ticket 020f saw no sabotage.
 @requires:nelim.pickletools
 @requires:nelim.pickletools.newcolony
 @requires:nelim.pickletools.loadaudit
@@ -8,7 +8,7 @@ Feature: Between Sus AI sabotage
     Given the main menu is open
     And Nelim's Pickle Tools: the new colony's seed is "betweensus-forced"
     And Nelim's Pickle Tools: the new colony's map size is 120
-    And Nelim's Pickle Tools: the new colony's scenario is "BS_BetweenSus_Test"
+    And Nelim's Pickle Tools: the new colony's scenario is "BS_BetweenSus_TestSabotage"
     When Nelim's Pickle Tools: a new colony is started
     And Nelim's Pickle Tools: the new colony's colonists have landed
     And Nelim's Pickle Tools: the game is advanced by 30000 ticks
