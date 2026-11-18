@@ -15,7 +15,7 @@ Feature: Between Sus French
     When Nelim's Pickle Tools: a new colony is started
     And Nelim's Pickle Tools: the new colony's colonists have landed
     Then Nelim's Pickle Tools: no label on screen matches "BS_"
-    When Nelim's Pickle Tools: I select the thing of def "BS_SecurityConsole" at (27, 65)
+    When Nelim's Pickle Tools: I select the thing of def "BS_SecurityConsole" at (28, 65)
     And Nelim's Pickle Tools: I click the gizmo keyed "BS_Cameras"
     Then Nelim's Pickle Tools: the window "Dialog_MessageBox" contains "Cafétéria"
     And Nelim's Pickle Tools: no label on screen matches "BS_"

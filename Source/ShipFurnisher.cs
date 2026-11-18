@@ -134,9 +134,9 @@ namespace BetweenSus
                         break;
                     case "Security":
                         ctx.Row("TubeTelevision", 1, 8, 3, 2);
-                        ctx.Place("BS_SecurityConsole", 3, 3);
+                        ctx.Place("BS_SecurityConsole", 4, 3);
                         ctx.Place("BS_TaskStation", 6, 3);
-                        ctx.Place("DiningChair", 3, 2);
+                        ctx.Place("DiningChair", 4, 2);
                         break;
                     case "Medbay":
                         ctx.Row("HospitalBed", 1, 6, 4, 3);
