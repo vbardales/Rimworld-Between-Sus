@@ -1,0 +1,8 @@
+# Pass for S21 and S26 (18-consoles, 19-french): colonistrace steps (windows, screen text) plus the keyed gizmo click and the select-by-def step.
+brrainz.harmony                      2009463077
+nelim.pickletools                    path:PickleTools/Tests/Pickle/StandaloneBase/Mod
+nelim.pickletools.newcolony          path:PickleTools/NewColony/Mod
+nelim.pickletools.loadaudit          path:PickleTools/LoadAudit/Mod
+nelim.pickletools.colonistrace       path:PickleTools/ColonistRace/Mod
+nelim.pickletools.keyedclick         path:PickleTools/KeyedClick/Mod
+nelim.pickletools.inspecttabs        path:PickleTools/InspectTabs/Mod
