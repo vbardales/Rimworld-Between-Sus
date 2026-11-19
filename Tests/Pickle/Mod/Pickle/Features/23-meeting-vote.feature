@@ -18,7 +18,9 @@ Feature: Between Sus meeting and vote
     And Nelim's Pickle Tools: I select the thing of def "BS_EmergencyButton" at (54, 78)
     And Nelim's Pickle Tools: I click the gizmo keyed "BS_CallMeeting"
     Then Nelim's Pickle Tools: the window "Window_Meeting" is open
-    When Nelim's Pickle Tools: I click button keyed "BS_Vote"
+    Then Nelim's Pickle Tools: the button keyed "BS_Vote" is reachable in "Window_Meeting"
+    When Nelim's Pickle Tools: the button keyed "BS_Vote" has stood still
+    And Nelim's Pickle Tools: I click button keyed "BS_Vote"
     And Nelim's Pickle Tools: I click button keyed "BS_Back"
     And no errors were logged
 
@@ -35,7 +37,9 @@ Feature: Between Sus meeting and vote
     And Nelim's Pickle Tools: I select the thing of def "BS_EmergencyButton" at (54, 78)
     And Nelim's Pickle Tools: I click the gizmo keyed "BS_CallMeeting"
     Then Nelim's Pickle Tools: the window "Window_Meeting" is open
-    When Nelim's Pickle Tools: I click button keyed "BS_Vote"
+    Then Nelim's Pickle Tools: the button keyed "BS_Vote" is reachable in "Window_Meeting"
+    When Nelim's Pickle Tools: the button keyed "BS_Vote" has stood still
+    And Nelim's Pickle Tools: I click button keyed "BS_Vote"
     And Nelim's Pickle Tools: the field "argument" of the window "Window_Meeting" is set to "he was near the body"
     And Nelim's Pickle Tools: I click button keyed "BS_ConfirmVote"
     Then Nelim's Pickle Tools: a message "BS_YouArgue" appeared
