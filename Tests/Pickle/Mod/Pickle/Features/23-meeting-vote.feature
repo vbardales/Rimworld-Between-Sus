@@ -5,7 +5,7 @@
 @requires:nelim.pickletools.keyedclick
 Feature: Between Sus meeting and vote
 
-  Scenario: the button opens a meeting, back returns to the list, an argued vote is cast
+  Scenario: a vote click opens the argument page and back returns to the list
     Given the main menu is open
     And Nelim's Pickle Tools: the new colony's seed is "betweensus-forced"
     And Nelim's Pickle Tools: the new colony's map size is 120
@@ -20,7 +20,22 @@ Feature: Between Sus meeting and vote
     Then Nelim's Pickle Tools: the window "Window_Meeting" is open
     When Nelim's Pickle Tools: I click button keyed "BS_Vote"
     And Nelim's Pickle Tools: I click button keyed "BS_Back"
-    And Nelim's Pickle Tools: I click button keyed "BS_Vote"
+    And no errors were logged
+
+  Scenario: an argued vote is cast
+    Given the main menu is open
+    And Nelim's Pickle Tools: the new colony's seed is "betweensus-forced"
+    And Nelim's Pickle Tools: the new colony's map size is 120
+    And Nelim's Pickle Tools: the new colony's scenario is "BS_BetweenSus_Test"
+    When Nelim's Pickle Tools: a new colony is started
+    And Nelim's Pickle Tools: the new colony's colonists have landed
+    And Nelim's Pickle Tools: the screen is clear
+    And Nelim's Pickle Tools: the game is advanced by 3000 ticks
+    And Nelim's Pickle Tools: windows are allowed to open again
+    And Nelim's Pickle Tools: I select the thing of def "BS_EmergencyButton" at (54, 78)
+    And Nelim's Pickle Tools: I click the gizmo keyed "BS_CallMeeting"
+    Then Nelim's Pickle Tools: the window "Window_Meeting" is open
+    When Nelim's Pickle Tools: I click button keyed "BS_Vote"
     And Nelim's Pickle Tools: the field "argument" of the window "Window_Meeting" is set to "he was near the body"
     And Nelim's Pickle Tools: I click button keyed "BS_ConfirmVote"
     Then Nelim's Pickle Tools: a message "BS_YouArgue" appeared
