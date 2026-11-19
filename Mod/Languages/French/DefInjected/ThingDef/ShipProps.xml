@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 	<BS_CeilingLight.label>lumière du vaisseau</BS_CeilingLight.label>
-	<BS_CeilingLight.description>Une lumière intégrée au vaisseau. Elle ne consomme pas d'énergie.</BS_CeilingLight.description>
+	<BS_CeilingLight.description>Une lumière intégrée au vaisseau. Elle ne nécessite aucune alimentation électrique.</BS_CeilingLight.description>
 	<BS_EmergencyButton.label>bouton d'urgence</BS_EmergencyButton.label>
 	<BS_EmergencyButton.description>Le gros bouton rouge de la cafétéria. Le sélectionner convoque tout l'équipage à une réunion.</BS_EmergencyButton.description>
 	<BS_TaskStation.label>station de tâches</BS_TaskStation.label>
